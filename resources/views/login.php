@@ -17,6 +17,7 @@
 
     @media (max-width: 992px) {
         .HomeLogoImages img {
+            margin-bottom: 3rem;
             transition: 0.3s;
         }
     }
