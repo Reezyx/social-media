@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Models\Post;
-use App\Models\Posting;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,14 +19,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('login');
 // });
+// Route::get('/login',[UserController::class,'index']);
+// Route::post('/login',[UserController::class,'authenticate']);
 
-Route::get('/', function() {
-
-    $posts = Post::all();
-    dd($posts);
-    return view('home',[
-        "posts" => $posts
-    ]);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
+Route::get('/',[UserController::class,'formLogin'])->name('/');
+Route::get('/home',[PostController::class,'index'])->name('home');
+Route::get('/formLogin',[UserController::class,'formLogin'])->name('formLogin');
+Route::get('/formRegistrasi',[UserController::class,'formRegistrasi'])->name('formRegistrasi');
+Route::post('/login',[UserController::class,'login'])->name('login');
+Route::post('/registrasi',[UserController::class,'registrasi'])->name('registrasi');

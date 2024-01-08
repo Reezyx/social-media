@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Laravel\Sanctum\HasApiTokens;
 
-class Post extends Model
+class Comment extends Model
 {
-    use HasFactory,HasApiTokens;
+    use HasFactory;
+
 
     public $incrementing = false;
     protected $keyType = 'string';
     protected $fillable = [
+        'comment',
+        'post_id',
         'user_id',
-        'content',
-        'likes_count',
-        'comment_count',
-        'image'
-        
+        'parrent_comment_id'
     ];
-
-    
 
 
     public function user(){
@@ -30,16 +26,30 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function comment(){
+   
 
-        return $this->hasMany(Comment::class);
-    }
+    public function post(){
 
-    public function like(){
-
-        return $this->morphMany(Like::class,"item");
+        return $this->belongsTo(Post::class);
     }
     
+    public function replies()
+    {
+        return $this->hasMany(Comment::class, 'parent_comment_id');
+    }
+
+    public function parentComment()
+    {
+        return $this->belongsTo(Comment::class, 'parent_comment_id');
+    }
+
+
+
+
+
+
+
+
     protected static function boot()
     {
         parent::boot();
@@ -48,5 +58,6 @@ class Post extends Model
             $model->{$model->getKeyName()} = (string) Str::uuid();
         });
     }
+
 
 }

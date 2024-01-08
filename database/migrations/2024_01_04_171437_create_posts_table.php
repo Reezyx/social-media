@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('likes_count')->default(0);
             $table->integer('comments_count')->default(0);
             $table->uuid('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
