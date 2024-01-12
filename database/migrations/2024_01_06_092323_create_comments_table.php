@@ -18,7 +18,8 @@ return new class extends Migration
             $table->uuid('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->text('comment');
-            $table->uuid('parent_comment_id')->nullable(); 
+            $table->integer('likes_count')->default(0);
+            $table->uuid('parent_comment_id')->nullable();
             $table->foreign('parent_comment_id')->references('id')->on('comments')->onDelete('cascade');
             $table->timestamps();
         });

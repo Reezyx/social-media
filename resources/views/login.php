@@ -12,6 +12,11 @@
     }
 
     .HomeLogoImages img {
+        box-shadow: 2px 5px 25px rgba(0, 0, 0, 0.2);
+        background-color: white;
+        border-radius: 50%;
+        padding: 20px;
+        width: 12rem;
         transition: 0.3s;
     }
 
@@ -20,6 +25,11 @@
             margin-bottom: 3rem;
             transition: 0.3s;
         }
+    }
+
+    .rowFooter p {
+        font-weight: 500;
+        font-size: 0.7rem;
     }
 </style>
 <!DOCTYPE html>
@@ -57,7 +67,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12 text-center HomeLogoImages">
-                                        <img src="images/pt_amanah_karya_indonesia_logo.jpg" alt="image-login-container" style="box-shadow: 2px 5px 25px rgba(0, 0, 0, 0.2); background-color: white; border-radius: 50%; padding: 20px; width: 12rem;">
+                                        <img src="images/pt_amanah_karya_indonesia_logo.jpg" alt="image-login-container">
                                     </div>
                                 </div>
                             </div>
@@ -149,19 +159,19 @@
                             <h6 style="font-family: 'Poppins'; margin-top: 10px; text-align: center; ">Our Products
                             </h6>
                         </div>
-                        <div class="row mt-4">
+                        <div class="row mt-4" class="rowFooter">
                             <div class="col-lg-2 col-md-3">
-                                <p style="font-weight: 500; font-size: 0.7rem;">- Bisa TopUp</p>
-                                <p style="font-weight: 500; font-size: 0.7rem;">- MutasiBank</p>
-                                <p style="font-weight: 500; font-size: 0.7rem;">- BisaKasir</p>
+                                <p>- Bisa TopUp</p>
+                                <p>- MutasiBank</p>
+                                <p>- BisaKasir</p>
                             </div>
                             <div class="col-lg-2 col-md-3" style="text-align: left;">
-                                <p style="font-weight: 500; font-size: 0.7rem;">- Berbagi.link</p>
-                                <p style="font-weight: 500; font-size: 0.7rem;">- BisaBerbagi</p>
-                                <p style="font-weight: 500; font-size: 0.7rem;">- Jualanku</p>
+                                <p>- Berbagi.link</p>
+                                <p>- BisaBerbagi</p>
+                                <p>- Jualanku</p>
                             </div>
                             <div class="col-lg-2 col-md-3" style="text-align: left;">
-                                <p style="font-weight: 500; font-size: 0.7rem;">- Amandemy</p>
+                                <p>- Amandemy</p>
                             </div>
                         </div>
 

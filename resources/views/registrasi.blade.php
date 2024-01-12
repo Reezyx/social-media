@@ -10,7 +10,8 @@
     <div class="container" style="max-width: 800px;margin:auto">
 
 
-        <form action="" method="post">
+        <form action="{{ route('registrasi') }}" method="post">
+          @csrf
             <h1>Registrasi</h1>
             <div class="mb-3">
                 <label for="form-name" class="form-label">name </label>
@@ -28,8 +29,8 @@
             <label for="form-password" class="form-label">Password</label>
             <input type="text" name="password" class="form-control" id="form-password" placeholder="name@example.com">
             </div>
-            <a href="" class="text-center my-2">Belum punya akun? Klik Disini</a>
-            <button class="btn btn-primary w-100">Login</button>
+            <a href="/formLogin" class="text-center my-2">Belum punya akun? Klik Disini</a>
+            <button class="btn btn-primary w-100" type="submit">Registrasi</button>
         </form>
 
     </div>

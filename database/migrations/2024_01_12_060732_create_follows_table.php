@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bookmarks', function (Blueprint $table) {
+        Schema::create('follows', function (Blueprint $table) {
             $table->id();
-
-            $table->uuid('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->uuid('post_id');
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->uuid('following_id');
+            $table->foreign('following_id')->references('id')->on('users');
+            $table->uuid('follower_id');
+            $table->foreign('follower_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bookmarks');
+        Schema::dropIfExists('follows');
     }
 };

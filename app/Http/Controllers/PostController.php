@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
+use App\Models\Like;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -11,99 +14,90 @@ class PostController extends Controller
 {
 
 
-    public function index(){
+    public function formCreatePost()
+    {
+
+        return view('createPost');
+    }
+
+    public function index()
+    {
+
 
         $posts = Post::latest()->get();
 
-        
-        return  response()->json([ "posts" => $posts,]);
-
+        return view('home', [
+            "posts" => $posts,
+        ]);
     }
 
-    public function seePost(Post $post){
+    public function seePost(Post $post)
+    {
 
         $user = Auth::user();
-    
-        $postWithComments = Post::with(['comment', 'comment.replies', 'comment.parentComment'])->find($post->id);
-        
 
-        return response()->json([
-            'post' => $postWithComments
+        // $postWithComments = Post::with(['comment', 'comment.replies', 'comment.parentComment'])->find($post->id);
+        $post = Post::find($post->id);
+        $comments = Comment::with('replies')->where('post_id', $post->id)
+            ->whereNull('parent_comment_id')
+            ->get();
+
+
+
+        return view('post', [
+            "post" => $post,
+            "comments" => $comments
         ]);
-
     }
 
-    public function createPost(Request $request){
+    public function createPost(Request $request)
+    {
 
+        $user = Auth::user();
 
-        $this->tesCreatePost($request);
-    
-    // CODINGAN YANG BENAR
+        if ($user) {
+            $post = Post::create([
+                'user_id' => $user->id,
+                'content' => $request->content,
+                'likes_count' => 0,
+                'comments_count' => 0,
+                'image' => $request->image,
+            ]);
 
-        // $user = Auth::user();
+            return redirect()->intended('home')->with('message', 'Postingan berhasil dibuat');
+        } else {
 
-        // if ($user) {
-        //     $post = Post::create([
-        //         'user_id' => $user->id,
-        //         'content' => $request->content,
-        //         'likes_count' => 0,
-        //         'comments_count' => 0,
-        //         'image' => $request->image,
-        //     ]);
-        
-        //     return [
-        //         'post' => $post,
-        //     ];
-        // } else {
-        //     // Handle ketika pengguna tidak diotentikasi
-        //     return response()->json(['error' => 'Unauthorized'], 401);
-        // }
+            return redirect('/login')->with('message', 'Anda belum Login');
+        }
     }
 
-    public function deletePost(Post $post){
+    public function deletePost(Post $post)
+    {
+
+        $user = Auth::user();
+
+        if (auth()->check()) {
 
 
-       $this->tesDeletePost($post);
-
-        // INI CODINGAN YANG BENAR
-
-        // if (auth()->check()) {
-        //     $user = Auth::user();
-            
-        //     $post = Post::findOrFail($post);
-        //     if($post->user_id === $user->id){
-        //         $post->comment()->delete();
-        //         $post->delete();
-        //         return [
-        //             'post' => $post,
-        //             'message' => 'Berhasil menghapus post'
-        //         ];
-        //     } 
-            
-        //     else {
-        //         return [
-        //             'error_code' => 403,
-        //             'error' => "Anda tidak memiliki hak akses"
-        //         ];
-        //     }
-        // } else {
-        //     return [
-        //         'error_code' => 401,
-        //         'error' => "Anda tidak belum login"
-        //     ];
-        // }
-
-
+            if ($post->user_id === $user->id) {
+                $post->comment()->delete();
+                $post->delete();
+                return redirect()->route('home')->with('message', 'berhasil menghapus postingan');
+            } else {
+                return redirect()->route('home')->with('message', "Anda Tidak punya hak akses");
+            }
+        } else {
+            return redirect('/login');
+        }
     }
-    
 
 
-    
-    public function updatePost(Request $request,$idPost)
+
+    public function updatePost(Request $request, $idPost)
     {
         $post = Post::find($idPost);
 
-        
+
         if (!$post) {
             return response()->json(['error' => 'Postingan Tidak ditemukan'], 404);
         }
@@ -137,55 +131,65 @@ class PostController extends Controller
 
 
 
-    //---------------------------------
-    //      METHOD UNTUK NGETES
-    // -------------------------------
+    public function likePost(Request $request, Post $post)
+    {
+        $user = Auth::user();
 
-    private function tesDeletePost($post){
+        // CEK SUDAH DILIKE APA BELUM
+        $like = Like::where('user_id', $user->id)->where('item_type', 'App\Models\Post')->where('item_id', $post->id)->first();
+        if ($like != null) {
+            $post->likes_count -= 1;
 
-        $post = Post::findOrFail($post);
-        // Ini variabel untuk tes dipostman saja
-        $iduser ="204d0887-33c4-41ba-9ccb-e1b94dc236bc";
-        if($iduser === $post->user_id){
+            $post->save();
+            $like->delete();
 
-            $post->comment()->delete();
-            $post->delete();
-            return [
-                'post' => $post,
-                'message' => 'Berhasil menghapus post',
-                'code' => 200
-            ];
-        } else {
-            return response()->json([
-                'code' => 403,
-                'message' => "Anda tidak memiliki hak akses"
-            ]);
+            return redirect()->back();
         }
-            
+
+        $post->likes_count += 1;
+        $post->save();
+
+        $like = new Like();
+        $like->user_id = $user->id;
+        $like->item_type = 'App\Models\Post';
+        $like->item_id = $post->id;
+        $post->like()->save($like);
+
+
+
+        return redirect()->back();
     }
 
 
-    private function tesCreatePost($request){
+    public function addBookmark(Post $post)
+    {
+        $user = Auth::user();
 
-        $post = Post::create([
-            'user_id' => $request->user_id,
-            'content' => $request->content,
-            'likes_count' => 0,
-            'comments_count' => 0,
-            'image' => $request->image,
+        $cekBookmark = $user->bookmark()->where('post_id', $post->id)->exists();
+
+        if ($cekBookmark) {
+
+            $user->bookmark()->detach($post->id);
+            $message = 'Post removed from bookmark.';
+        } else {
+
+            $user->bookmark()->attach($post->id);
+            $message = 'Post added to bookmarks.';
+        }
+
+
+        return redirect()->back();
+    }
+
+
+    public function seeBookmark()
+    {
+        $user = Auth::user();
+
+        $posts = $user->bookmark()->latest()->get();
+
+        return view('home', [
+            "posts" => $posts,
         ]);
-
-        return response()->json([
-            'post' => $post,
-        ]); 
     }
-
-
-
-
-
-
-   
-
-
 }

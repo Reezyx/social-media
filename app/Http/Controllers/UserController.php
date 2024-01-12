@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Bookmark;
+use App\Models\Follow;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -13,118 +15,100 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
 
-    public function formLogin(){
+    public function formLogin()
+    {
 
         return view('login');
     }
 
-    public function formRegistrasi(){
+    public function formRegistrasi()
+    {
 
-        return view('registasi');
+        return view('registrasi');
     }
 
 
-    public function registrasi(Request $request){
+    public function registrasi(Request $request)
+    {
 
         $validatedData = $request->validate([
-            'email' => ['required','email:dns','unique:users,email'],
+            'email' => ['required', 'email:dns', 'unique:users,email'],
             'username' => ['required', 'unique:users,username'],
-            'password' => ['required','min:8'],
+            'password' => ['required', 'min:8'],
             'name' => ['required', 'max:255'],
         ]);
-        $validatedData['password'] = Hash::make($validatedData['password']);        
+        $validatedData['password'] = Hash::make($validatedData['password']);
         try {
+
             $user = User::create($validatedData);
 
-            return [
-                'status' => 'berhasil',
-                'data' => $user
-            ];
+            // Redirect with success message and user data
+            return redirect()->route('formLogin')->with([
+                'success' => 'Registrasi berhasil! Please login',
+                'user' => $user
+            ]);
         } catch (\Exception $e) {
-
-            return [
-                'status' => 'Gagal ',
-                'Error' => $e->getMessage()
-            ];
+            // Redirect back with error message
+            return redirect()->back()->with([
+                'error' => $e->getMessage()
+            ]);
         }
     }
 
 
 
 
-    public function login(Request $request){
+    public function userLogin(Request $request)
+    {
 
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|min:8'
         ]);
- 
-        if($validator->fails()){
-         return response()->json(["error"=>$validator->errors()]);
-        }
+
+
         $credentials = $validator->validated();
- 
+
         if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            // Mendapatkan pengguna yang terotentikasi
             $user = Auth::user();
-           
-            $token = $user->createToken('token-name');
 
-            
-
-            
-            return response()->json([
-
-                'message' => 'Login successful',
-                'data' => [
-                    "user" => $user,
-                    "token" => $token
-                ]
-            ]);
-        }else{
-
-            return [
-                'status' => 'gagal login',
-
-            ];
+            // Mengarahkan ke halaman yang sesuai berdasarkan peran (role)
+            return redirect()->intended('/home')->with('succces', 'anda berhasil login');
         }
+
+        return back()->withErrors(['password' => 'Password yang dimasukkan salah.'])->with('failed', 'Login Failed');
     }
 
 
+    public function logout(Request $request)
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 
 
+    public function seePeople(User $user)
+    {
 
+        $userWithPosts = User::with(['post', 'follower', 'following'])->find($user->id);
 
+        // codingan dibawah bisa namun tidak menggunakan eagerLoading
 
+        // $followerCount = Follow::where('following_id', $user->id)->count();
+        // $followingCount = Follow::where('follower_id', $user->id)->count();
 
-    
-
-    // public function store(Request $request){
-    //     $validator = Validator::make($request->all(), [
-    //         'email' => ['required', 'email:dns', 'unique:users,email'],
-    //         'username' => ['required', 'unique:users,username'],
-    //         'name' => ['required', 'max:255'],
-    //         'password' => ['required', 'min:8']
-    //     ]);
-    
-
-    //     if ($validator->fails()) {
-    //         return response()->json(['message' => 'Gagal menyimpan data', 'error' => $validator->errors()], 422);
-    //     }
-
-    //     $validatedData = $request->all();
-    //     $validatedData['password'] = Hash::make($validatedData['password']);
-    
-    //     try {
-    //         $user = User::create($validatedData);
-    
-    //         return response()->json(['message' => 'Data berhasil disimpan', 'user' => $user], 201);
-    //     } catch (\Exception $e) {
-          
-    //         return response()->json(['message' => 'Gagal menyimpan data', 'error' => $e->getMessage()], 500);
-    //     }
-    // }
-
-    
-
-    
+        return view('people', [
+            'people' => $userWithPosts,
+            'follower_count' => $userWithPosts->follower->count(),
+            'following_count' => $userWithPosts->following->count()
+        ]);
+    }
 }

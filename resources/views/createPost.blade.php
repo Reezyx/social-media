@@ -10,19 +10,19 @@
     <div class="container" style="max-width: 800px;margin:auto">
 
 
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('createPost') }}" method="post">
           @csrf
-            <h1>Login</h1>
+            <h1>Tambah Postingan</h1>
             <div class="mb-3">
-                <label for="form-email" class="form-label">Email </label>
-                <input type="email" class="form-control" name="email" id="form-email" placeholder="name@example.com">
-              </div>
-              <div class="mb-3">
-                <label for="form-password" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" id="form-password" placeholder="name@example.com">
-              </div>
-              <a href="/formRegistrasi" class="text-center my-2">Belum punya akun? Klik Disini</a>
-              <button class="btn btn-primary w-100" type="submit">Login</button>
+                <label for="form-image" class="form-label">Image</label>
+                <input type="text" name="image" class="form-control" id="form-image" placeholder="Iamge Link">
+            </div>
+            <div class="mb-3">
+                <label for="form-content" class="form-label">Content </label>
+                <input type="text" name="content" class="form-control" id="form-content" placeholder="Content">
+            </div>
+          
+            <button class="btn btn-primary w-100" type="submit">Registrasi</button>
         </form>
 
     </div>
