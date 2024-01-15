@@ -9,17 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class FollowController extends Controller
 {
-
-
-
     public function seeFollower(User $user)
     {
         // Menggunakan relasi untuk mendapatkan followers dan menyertakan data user
         $follows = $user->follower()->with('follower')->get();
-
-        return view('follow', [
+      
+        return view('followDetail', [
             'follows' => $follows,
-            'judul' => 'Follower'
+            'judul' => 'Follower',
+            'user' => $user
         ]);
     }
 
@@ -28,9 +26,10 @@ class FollowController extends Controller
         // Menggunakan relasi untuk mendapatkan followers dan menyertakan data user
         $follows = $user->following()->with('following')->get();
 
-        return view('follow', [
+        return view('followDetail', [
             'follows' => $follows,
-            'judul' => 'Following'
+            'judul' => 'Following',
+            'user' => $user
         ]);
     }
 
@@ -39,9 +38,7 @@ class FollowController extends Controller
     public function followPeople(User $people)
     {
 
-
         $user = Auth::user();
-
         $cekFollow = Follow::where('following_id', $people->id)->where('follower_id', $user->id)->first();
 
         if ($cekFollow) {
@@ -52,8 +49,6 @@ class FollowController extends Controller
             $newFollow->follower_id = $user->id;
             $newFollow->save();
         }
-
-
 
         return redirect()->back();
     }

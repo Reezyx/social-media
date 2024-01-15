@@ -50,21 +50,20 @@ class CommentController extends Controller
     public function sendComment(Request $request, Post $post)
     {
         $user = Auth::user();
-        $cekPost = Post::find($request->post_id);
+        $cekPost = Post::find($post->id);
         if ($cekPost) {
             // JIKA PUYA PARENT_COMMENT_ID
 
             $comment = Comment::create([
                 "user_id" => $user->id,
-                "post_id" => $request->post_id,
+                "post_id" => $post->id,
                 "comment" => $request->comment,
             ]);
-            return redirect()->route('seePost', ['post' => $request->post_id])->with([
+            return redirect()->route('seePost', ['post' => $post->id])->with([
                 'message' => 'Berhasil membalas komentar',
             ]);
         } else {
-
-            return redirect()->route('home')->with([
+            return redirect()->route('index')->with([
                 'message' => 'Postingan tidak tersedia',
             ]);
         }

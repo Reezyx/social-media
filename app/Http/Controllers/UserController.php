@@ -76,7 +76,7 @@ class UserController extends Controller
             $user = Auth::user();
 
             // Mengarahkan ke halaman yang sesuai berdasarkan peran (role)
-            return redirect()->intended('/home')->with('succces', 'anda berhasil login');
+            return redirect()->intended('/index')->with('succces', 'anda berhasil login');
         }
 
         return back()->withErrors(['password' => 'Password yang dimasukkan salah.'])->with('failed', 'Login Failed');
@@ -105,10 +105,33 @@ class UserController extends Controller
         // $followerCount = Follow::where('following_id', $user->id)->count();
         // $followingCount = Follow::where('follower_id', $user->id)->count();
 
-        return view('people', [
-            'people' => $userWithPosts,
+        return view('othersProfile', [
+            'user' => $userWithPosts,
             'follower_count' => $userWithPosts->follower->count(),
             'following_count' => $userWithPosts->following->count()
+        ]);
+    }
+    public function myProfile()
+    {
+
+        $user = Auth::user();
+        $userWithPosts = User::with(['post', 'follower', 'following'])->find($user->id);
+
+        // codingan dibawah bisa namun tidak menggunakan eagerLoading
+
+        // $followerCount = Follow::where('following_id', $user->id)->count();
+        // $followingCount = Follow::where('follower_id', $user->id)->count();
+
+        return view('myProfile', [
+            'user' => $userWithPosts,
+            'follower_count' => $userWithPosts->follower->count(),
+            'following_count' => $userWithPosts->following->count()
+        ]);
+    }
+    public function editProfile(){
+        $user = Auth::user();
+        return view('editProfile', [
+            'user' => $user
         ]);
     }
 }

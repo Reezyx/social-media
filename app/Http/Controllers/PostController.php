@@ -22,29 +22,28 @@ class PostController extends Controller
 
     public function index()
     {
-
-
+        $user = Auth::user();
         $posts = Post::latest()->get();
+        $others = User::all();
 
-        return view('home', [
+        return view('index', [
             "posts" => $posts,
+            "user" => $user,
+            "others" => $others
         ]);
     }
-
     public function seePost(Post $post)
     {
 
         $user = Auth::user();
 
         // $postWithComments = Post::with(['comment', 'comment.replies', 'comment.parentComment'])->find($post->id);
-        $post = Post::find($post->id);
+        $post = Post::with('user')->find($post->id);
         $comments = Comment::with('replies')->where('post_id', $post->id)
             ->whereNull('parent_comment_id')
             ->get();
 
-
-
-        return view('post', [
+        return view('detailPostingan', [
             "post" => $post,
             "comments" => $comments
         ]);
@@ -188,7 +187,7 @@ class PostController extends Controller
 
         $posts = $user->bookmark()->latest()->get();
 
-        return view('home', [
+        return view('bookmarks', [
             "posts" => $posts,
         ]);
     }

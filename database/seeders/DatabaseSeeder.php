@@ -68,5 +68,11 @@ class DatabaseSeeder extends Seeder
                 return $followingUser->id;
             },
         ]);
+        \App\Models\User::factory()->create([
+            'username' => 'n',
+            'name' => 'nopal',
+            'email' => 'nopal123@gmail.com',
+            'password' => '123123123'
+        ]);
     }
 }
