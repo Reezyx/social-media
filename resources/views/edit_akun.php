@@ -1806,7 +1806,12 @@
             width: 130%;
         }
     }
+    @media (max-width: 576px) {
 
+        footer .row{
+            margin-left: 0.5rem;
+        }
+    }
     @media (max-width: 560px) {
         .profileAuthor .namaProfileAuthorPost p {
             font-size: 0.7rem;

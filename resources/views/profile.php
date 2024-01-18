@@ -2,12 +2,25 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
     :root {
-        --main_color: white;
+        --main_color: #EEEEEE;
         --main_color-2: black;
         --main_color-3: #3F979B;
+        --main_color-4: #3F979B;
         --text-color: #D9D9D9;
     }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: black;
+    }
     * {
         /* border: 1px solid black; */
         margin: 0;
@@ -25,7 +38,7 @@
         height: 100%;
         width: 16rem;
         /* background: var(--main_color); */
-        box-shadow: 1px 1px 1px rgba(63, 151, 155, 0.4);
+        box-shadow: 1px 2px 1px rgba(256, 256, 256, 0.3);
         transition: all 0.5s ease;
     }
 
@@ -120,7 +133,7 @@
         min-width: 60px;
         text-align: center;
         font-size: 14px;
-        color: var(--main_color);
+        color: var(--main_color-4);
     }
 
     .sidebar .link-navigasi li a .links_name {
@@ -444,7 +457,12 @@
             width: 130%;
         }
     }
+    @media (max-width: 576px) {
 
+        footer .row{
+            margin-left: 0.5rem;
+        }
+    }
     @media (max-width: 560px) {
         .profileAuthor .namaProfileAuthorPost p {
             font-size: 0.7rem;

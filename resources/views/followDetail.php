@@ -22,6 +22,7 @@
     ::-webkit-scrollbar-thumb {
         background: black;
     }
+
     * {
         /* border: 1px solid black; */
         margin: 0;
@@ -39,7 +40,7 @@
         height: 100%;
         width: 16rem;
         /* background: var(--main_color); */
-        box-shadow: 1px 1px 1px rgba(63, 151, 155, 0.4);
+        box-shadow: 1px 2px 1px rgba(256, 256, 256, 0.3);
         transition: all 0.5s ease;
     }
 
@@ -620,7 +621,10 @@
         font-weight: 600;
         padding: 10px 20px 10px 20px;
         border-radius: 15px;
-    }    .sidebar {
+    }
+
+    .sidebar {
+        background-color: var(--main_color-2);
         position: fixed;
         z-index: 100;
         overflow: auto;
@@ -628,7 +632,7 @@
         height: 100%;
         width: 16rem;
         /* background: var(--main_color); */
-        box-shadow: 1px 1px 1px rgba(63, 151, 155, 0.4);
+        box-shadow: 1px 2px 1px rgba(256, 256, 256, 0.3);
         transition: all 0.5s ease;
     }
 
@@ -936,11 +940,13 @@
         margin: 20px 10px 10px 5px;
         background: transparent;
     }
+
     .listFollowersSearch .form-control {
         color: var(--text-color);
-        border: 1.8px solid rgba(220,220,220, 0.3);
+        border: 1.8px solid rgba(220, 220, 220, 0.3);
         background: transparent;
     }
+
     .listFollowersSearch .form-control:focus {
         background: transparent;
         color: var(--text-color);
@@ -1152,7 +1158,12 @@
             width: 130%;
         }
     }
+    @media (max-width: 576px) {
 
+        footer .row{
+            margin-left: 0.5rem;
+        }
+    }
     @media (max-width: 560px) {
         .profileAuthor .namaProfileAuthorPost p {
             font-size: 0.7rem;
@@ -1326,6 +1337,7 @@
 </style>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
     <head>
         <meta charset="UTF-8">
         <title>Beranda</title>
@@ -1345,6 +1357,7 @@
             }
         </script>
     </head>
+
     <body style="background-color: black;">
         <div class="sidebar">
             <div class="detail_logo">
@@ -1424,96 +1437,98 @@
                 </li>
             </ul>
         </div>
-         <section class="home-section">
-        <div class="container-fluid nav">
-            <div class="container-fluid container-xl">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-lg-2 d-flex" onClick="backToHistory()">
-                                <p id="arrowLeft">
-                                    < </p>
-                                        <p id="back">Back</p>
-                            </div>
-                            <div class="col-lg-8 col-12">
-                                <p class="usernameDetailFollow" style="text-align: center; justify-content: center;">jangandifollow_74</p>
-                            </div>
-                        </div>
-                        <div class="row navigasiFilter">
-                            <ul class="navigasi" style="margin-top: 10px; margin-bottom: -20px;">
-                                <li class="navigasi-item NavFilter">
-                                    <a class="navigasi-link pilihKategoriFollow active" href="#">
-                                        <p>Followers</p>
-                                    </a>
-                                </li>
-                                <li class="navigasi-item">
-                                    <a class="navigasi-link pilihKategoriFollow" href="#">
-                                        <p>Following</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="row">
-                            <p id="allFollowers"></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 listFollowersSearch">
-                        <form action="" method="POST">
-                            <div class="row">
-                                <div class="col-12 headerSearchFollowing">
-                                    <p>Cari followers</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 d-flex searchFollowing">
-                                    <input type="text" class="form-control" name="isiCari" id="isiCari" placeholder="Cari">
-                                    <button type="submit" name="kirimCari" id="btnKirimCari">
-                                        <i class="fa-solid fa-magnifying-glass"></i> </button>
-                                </div>
-                            </div>
-                        </form>
-                        <a href="profile.php" style="display: flex;">
-                            <i><img src="images/sambut_pagi.jpg" alt="gambar postingan"></i>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <span class="usernameFollowers">Naufal Fadhilah F</span>
-                                </div>
-                                <div class="row">
-                                    <span class="namaFollowers">Naufal Fadhilah F</span>
-                                </div>
-                            </div>
-                            <form action="" method="POST">
-                                <p>
-                                    <input type="submit" class="btn" name="follow" id="follow" value="Follow">
-                                </p>
-                            </form>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 listFollowers">
+        <section class="home-section">
+            <div class="container-fluid nav">
+                <div class="container-fluid container-xl">
+                    <div class="row">
                         <div class="col-12">
-                            <p id="listAll">List All Followers</p>
-                        </div>
-                        <a href="profile.php" style="display: flex;">
-                            <i><img src="images/sambut_pagi.jpg" alt="gambar postingan"></i>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <span class="usernameFollowers">Naufal Fadhilah F</span>
+                            <div class="row">
+                                <div class="col-lg-2 d-flex" onClick="backToHistory()">
+                                    <p id="arrowLeft">
+                                        < </p>
+                                            <p id="back">Back</p>
                                 </div>
-                                <div class="row">
-                                    <span class="namaFollowers">Naufal Fadhilah F</span>
+                                <div class="col-lg-8 col-12">
+                                    <p class="usernameDetailFollow"
+                                        style="text-align: center; justify-content: center;">jangandifollow_74</p>
                                 </div>
                             </div>
+                            <div class="row navigasiFilter">
+                                <ul class="navigasi" style="margin-top: 10px; margin-bottom: -20px;">
+                                    <li class="navigasi-item NavFilter">
+                                        <a class="navigasi-link pilihKategoriFollow active" href="#">
+                                            <p>Followers</p>
+                                        </a>
+                                    </li>
+                                    <li class="navigasi-item">
+                                        <a class="navigasi-link pilihKategoriFollow" href="#">
+                                            <p>Following</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <p id="allFollowers"></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 listFollowersSearch">
                             <form action="" method="POST">
-                                <p>
-                                    <input type="submit" class="btn" name="follow" id="follow" value="Follow">
-                                </p>
+                                <div class="row">
+                                    <div class="col-12 headerSearchFollowing">
+                                        <p>Cari followers</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-flex searchFollowing">
+                                        <input type="text" class="form-control" name="isiCari" id="isiCari"
+                                            placeholder="Cari">
+                                        <button type="submit" name="kirimCari" id="btnKirimCari">
+                                            <i class="fa-solid fa-magnifying-glass"></i> </button>
+                                    </div>
+                                </div>
                             </form>
-                        </a>
+                            <a href="profile.php" style="display: flex;">
+                                <i><img src="images/sambut_pagi.jpg" alt="gambar postingan"></i>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <span class="usernameFollowers">Naufal Fadhilah F</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="namaFollowers">Naufal Fadhilah F</span>
+                                    </div>
+                                </div>
+                                <form action="" method="POST">
+                                    <p>
+                                        <input type="submit" class="btn" name="follow" id="follow" value="Follow">
+                                    </p>
+                                </form>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 listFollowers">
+                            <div class="col-12">
+                                <p id="listAll">List All Followers</p>
+                            </div>
+                            <a href="profile.php" style="display: flex;">
+                                <i><img src="images/sambut_pagi.jpg" alt="gambar postingan"></i>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <span class="usernameFollowers">Naufal Fadhilah F</span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="namaFollowers">Naufal Fadhilah F</span>
+                                    </div>
+                                </div>
+                                <form action="" method="POST">
+                                    <p>
+                                        <input type="submit" class="btn" name="follow" id="follow" value="Follow">
+                                    </p>
+                                </form>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </body>
     <!-- <footer>
     <div class="container">
@@ -1532,10 +1547,10 @@
 
 </html>
 <script>
-    function backToHistory(){
+    function backToHistory() {
         window.history.back();
     }
-    $('.pilihKategoriFollow').on('click', function(){
+    $('.pilihKategoriFollow').on('click', function () {
         $('.pilihKategoriFollow').removeClass('active');
         $(this).addClass('active');
     })

@@ -31,7 +31,6 @@
     }
 
     .sidebar {
-        background: black;
         position: fixed;
         z-index: 100;
         overflow: auto;
@@ -39,7 +38,7 @@
         height: 100%;
         width: 16rem;
         /* background: var(--main_color); */
-        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 1px 2px 1px rgba(256, 256, 256, 0.3);
         transition: all 0.5s ease;
     }
 
@@ -440,7 +439,12 @@
             left: 220px;
         }
     }
+    @media (max-width: 576px) {
 
+        footer .row{
+            margin-left: 0.5rem;
+        }
+    }
     @media (max-width: 560px) {
         .card {
             transform: translateX(-12%);
@@ -875,26 +879,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center footer">
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center footer">
-                        <p id="copyright">Copyright 2023</p>
                     </div>
                 </div>
             </div>

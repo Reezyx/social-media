@@ -31,7 +31,7 @@
         background: black;
     }
     .sidebar {
-        background: black;
+        background-color: var(--main_color-2);
         position: fixed;
         z-index: 100;
         overflow: auto;
@@ -39,7 +39,7 @@
         height: 100%;
         width: 16rem;
         /* background: var(--main_color); */
-        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 1px 2px 1px rgba(256, 256, 256, 0.3);
         transition: all 0.5s ease;
     }
 
@@ -410,6 +410,12 @@
         }
     }
 
+    @media (max-width: 576px) {
+
+        footer .row{
+            margin-left: 0.5rem;
+        }
+    }
     @media (max-width: 560px) {
         .card {
             transform: translateX(-12%);
@@ -419,6 +425,9 @@
 
         .profileAuthor .namaProfileAuthorPost p {
             font-size: 0.7rem;
+        }
+        footer .row{
+            margin-left: 0.5rem;
         }
     }
 
@@ -1194,8 +1203,6 @@
         $('.pilihKategoriPostingan').removeClass('active');
         $(this).addClass('active');
     });
-
-
 
     $('.sidebarActive').on('click', function () {
         $('.sidebarActive').removeClass('sidebarActive').$(this).addClass('sidebarActive');

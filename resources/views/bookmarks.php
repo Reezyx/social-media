@@ -31,7 +31,6 @@
     }
 
     .sidebar {
-        background: black;
         position: fixed;
         z-index: 100;
         overflow: auto;
@@ -39,7 +38,7 @@
         height: 100%;
         width: 16rem;
         /* background: var(--main_color); */
-        border: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 1px 2px 1px rgba(256, 256, 256, 0.3);
         transition: all 0.5s ease;
     }
 
@@ -420,6 +419,13 @@
         }
     }
 
+    @media (max-width: 576px) {
+
+        footer .row {
+            margin-left: 0.5rem;
+        }
+    }
+
     @media (max-width: 560px) {
         .card {
             transform: translateX(-12%);
@@ -747,29 +753,157 @@
                                                     </a>
                                                 </div>
                                         </div>
+                                        <div class="col-lg-3 col-xl-3 col-md-4 col-6" style="margin-bottom: 3rem;">
+                                            <a href="postingan.php">
+                                                <div class="card mx-auto">
+                                                    <div class="card-body cardContent">
+                                                        <div class="profileAuthor">
+                                                            <a href="profile.php"
+                                                                style="display: flex; text-decoration: none;">
+                                                                <img class="imagesProfileAuthorPost"
+                                                                    src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
+                                                                    alt="gambar profile">
+                                                                <div class="container"
+                                                                    style="margin: 0rem 0rem 0rem -1.2rem;">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="UsernamePosting">
+                                                                                Naufal
+                                                                                Fadhilah F</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="timePosting">15 jam
+                                                                                yang lalu
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <a href="postingan.php">
+                                                        <img style="border-radius: 8px;"
+                                                            src="images/default_profile.png" class="card-img-top"
+                                                            alt="Gambar Postingan">
+                                                    </a>
+                                                </div>
+                                        </div>
+                                        <div class="col-lg-3 col-xl-3 col-md-4 col-6" style="margin-bottom: 3rem;">
+                                            <a href="postingan.php">
+                                                <div class="card mx-auto">
+                                                    <div class="card-body cardContent">
+                                                        <div class="profileAuthor">
+                                                            <a href="profile.php"
+                                                                style="display: flex; text-decoration: none;">
+                                                                <img class="imagesProfileAuthorPost"
+                                                                    src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
+                                                                    alt="gambar profile">
+                                                                <div class="container"
+                                                                    style="margin: 0rem 0rem 0rem -1.2rem;">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="UsernamePosting">
+                                                                                Naufal
+                                                                                Fadhilah F</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="timePosting">15 jam
+                                                                                yang lalu
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <a href="postingan.php">
+                                                        <img style="border-radius: 8px;"
+                                                            src="images/default_profile.png" class="card-img-top"
+                                                            alt="Gambar Postingan">
+                                                    </a>
+                                                </div>
+                                        </div>
+                                        <div class="col-lg-3 col-xl-3 col-md-4 col-6" style="margin-bottom: 3rem;">
+                                            <a href="postingan.php">
+                                                <div class="card mx-auto">
+                                                    <div class="card-body cardContent">
+                                                        <div class="profileAuthor">
+                                                            <a href="profile.php"
+                                                                style="display: flex; text-decoration: none;">
+                                                                <img class="imagesProfileAuthorPost"
+                                                                    src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
+                                                                    alt="gambar profile">
+                                                                <div class="container"
+                                                                    style="margin: 0rem 0rem 0rem -1.2rem;">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="UsernamePosting">
+                                                                                Naufal
+                                                                                Fadhilah F</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="timePosting">15 jam
+                                                                                yang lalu
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <a href="postingan.php">
+                                                        <img style="border-radius: 8px;"
+                                                            src="images/default_profile.png" class="card-img-top"
+                                                            alt="Gambar Postingan">
+                                                    </a>
+                                                </div>
+                                        </div>
+                                        <div class="col-lg-3 col-xl-3 col-md-4 col-6" style="margin-bottom: 3rem;">
+                                            <a href="postingan.php">
+                                                <div class="card mx-auto">
+                                                    <div class="card-body cardContent">
+                                                        <div class="profileAuthor">
+                                                            <a href="profile.php"
+                                                                style="display: flex; text-decoration: none;">
+                                                                <img class="imagesProfileAuthorPost"
+                                                                    src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
+                                                                    alt="gambar profile">
+                                                                <div class="container"
+                                                                    style="margin: 0rem 0rem 0rem -1.2rem;">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="UsernamePosting">
+                                                                                Naufal
+                                                                                Fadhilah F</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <p id="timePosting">15 jam
+                                                                                yang lalu
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <a href="postingan.php">
+                                                        <img style="border-radius: 8px;"
+                                                            src="images/default_profile.png" class="card-img-top"
+                                                            alt="Gambar Postingan">
+                                                    </a>
+                                                </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center footer">
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center footer">
-                        <p id="copyright">Copyright 2023</p>
                     </div>
                 </div>
             </div>

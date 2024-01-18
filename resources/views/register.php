@@ -6,7 +6,19 @@
     :root {
         --main_color: black;
     }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: black;
+    }
     .main_content {
         background-color: var(--main_color);
         min-height: 100%;
@@ -120,7 +132,12 @@
             transition: 0.2s;
         }
     }
+    @media (max-width: 576px) {
 
+        footer .row{
+            margin-left: 0.5rem;
+        }
+    }
     @media (max-width: 768px) {
         .namaRegist h6 {
             margin-top: 20px;
