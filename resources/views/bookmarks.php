@@ -152,7 +152,7 @@
         min-width: 60px;
         text-align: center;
         font-size: 14px;
-        color: white;
+        color: var(--main_color-3);
     }
 
     .sidebar .link-navigasi li a .links_name {
@@ -587,135 +587,136 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Beranda</title>
-    <link rel="icon" href="images/logo-medsos.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Edu+NSW+ACT+Foundation:wght@700&family=Kanit:wght@500&family=Mochiy+Pop+One&family=Montserrat:wght@200;600;800&family=Poppins:ital,wght@0,700;1,900&family=Ubuntu:wght@300&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
-    </script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Beranda</title>
+        <link rel="icon" href="images/logo-medsos.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Edu+NSW+ACT+Foundation:wght@700&family=Kanit:wght@500&family=Mochiy+Pop+One&family=Montserrat:wght@200;600;800&family=Poppins:ital,wght@0,700;1,900&family=Ubuntu:wght@300&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        </script>
+    </head>
 
-<body style="background-color: black;">
-    <div class="sidebar">
-        <div class="detail_logo">
-            <a href="profile.php" style="display: flex;">
-                <i><img src="images/smk1.jpg" alt="gambar postingan"></i>
-                <div class="container-fluid rowUsername">
-                    <div class="row">
-                        <span id="usernameProfileAuthor">Naufal Fadhilah F</span>
+    <body style="background-color: black;">
+        <div class="sidebar">
+            <div class="detail_logo">
+                <a href="profile.php" style="display: flex;">
+                    <i><img src="images/smk1.jpg" alt="gambar postingan"></i>
+                    <div class="container-fluid rowUsername">
+                        <div class="row">
+                            <span id="usernameProfileAuthor">Naufal Fadhilah F</span>
+                        </div>
+                        <div class="row">
+                            <span id="namaProfileAuthor">Naufal Fadhilah F</span>
+                        </div>
                     </div>
-                    <div class="row">
-                        <span id="namaProfileAuthor">Naufal Fadhilah F</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <hr
-            style="color: var(--main_color); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
-        <ul class="link-navigasi">
-            <li class="sidebarActive">
-                <a href="index.php">
-                    <i class="fa-solid fa-house aktif"></i>
-                    <p class="links_name" id="beranda">Beranda</p>
                 </a>
-            </li>
-            <li>
-                <a href="search.php">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <p class="links_name" id="explore">Explore</p>
-                </a>
-            </li>
-            <li>
-                <a href="postingan.css">
-                    <i class="fa-solid fa-bell"></i>
-                    <p class="links_name" id="notifikasi">Notifikasi</p>
-                </a>
-            </li>
-            <li>
-                <a href="home.php">
-                    <i class="fa-solid fa-plus"></i>
-                    <p class="links_name" id="posting">Posting</p>
-                </a>
-            </li>
-            <li>
-                <a href="bookmarks.php">
-                    <i class="fa-solid fa-bookmark"></i>
-                    <p class="links_name" id="bookmarks">Bookmarks</p>
-                </a>
-            </li>
-            <li>
-                <a href="dashboard_user.php">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <p class="links_name">Explore</p>
-                </a>
-            </li>
-            <li>
-                <a href="dashboard_postingan.css">
-                    <i class="fa-solid fa-bell"></i>
-                    <p class="links_name">Notifikasi</p>
-                </a>
-            </li>
-            <li class="log_out">
-                <a href="../session/logout.php">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <p class="links_name">Log out</p>
-                </a>
-            </li>
-            <li class="SidebarBottomText">
-                <p style="font-size: 0.48rem; width: 100%; color: grey; margin-top: 1rem;">
-                    Terms of Service
-                    Privacy Policy
-                    Cookie Policy
-                    Accessibility
-                    Ads info
-                    More
-                    © 2024 Amanah Corp.
-                </p>
-            </li>
-        </ul>
-    </div>
-    <!-- <h1 style="transform: translateX(5rem); padding-top: 20px; margin-bottom: -0.4rem; letter-spacing: 3; color: var(--main_color-2); font-weight: 800;">Sosmed</h1> -->
-    <section class="nav-section" style="z-index: 99; position: fixed; background-color: black;">
-        <div class="container-fluid nav" style="background-color: black;">
-            <div class="container" style="background-color: black; transform: translateX(-1rem);">
-                <nav class="justify-content-center">
-                    <div class="logoHomepage">
-                        <img src="images/logo-medsos.png" alt="logo homepage">
-                    </div>
-                    <div class="row">
-                        <h1>All Bookmarks</h1>
-                    </div>
-                </nav>
             </div>
+            <hr
+                style="color: var(--main_color); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
+            <ul class="link-navigasi">
+                <li>
+                    <a href="index.php">
+                        <i class="fa-solid fa-house aktif"></i>
+                        <p class="links_name" id="beranda">Beranda</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="search.php">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p class="links_name" id="explore">Explore</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="postingan.css">
+                        <i class="fa-solid fa-bell"></i>
+                        <p class="links_name" id="notifikasi">Notifikasi</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="home.php">
+                        <i class="fa-solid fa-plus"></i>
+                        <p class="links_name" id="posting">Posting</p>
+                    </a>
+                </li>
+                <li class="sidebarActive">
+                    <a href="bookmarks.php">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <p class="links_name" id="bookmarks">Bookmarks</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard_user.php">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p class="links_name">Explore</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard_postingan.css">
+                        <i class="fa-solid fa-bell"></i>
+                        <p class="links_name">Notifikasi</p>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="../session/logout.php">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <p class="links_name">Log out</p>
+                    </a>
+                </li>
+                <li class="SidebarBottomText">
+                    <p style="font-size: 0.48rem; width: 100%; color: grey; margin-top: 1rem;">
+                        Terms of Service
+                        Privacy Policy
+                        Cookie Policy
+                        Accessibility
+                        Ads info
+                        More
+                        © 2024 Amanah Corp.
+                    </p>
+                </li>
+            </ul>
         </div>
-    </section>
-    <section class="home-section" style="background-color: black;">
-        <div class="container-fluid nav" style="background-color: black;">
-            <div class="container-fluid container-xl">
-                <!-- Foreach card dimulai dari sini -->
-                <div class="row" style="margin-bottom: 2rem;"> <a href="postingan.php"
-                        style="text-decoration: none; color: black;">
-                        <div class="konten-home">
-                            <div class="container">
-                                <div class="row">
-                                    @foreach ($posts as $post)
+        <!-- <h1 style="transform: translateX(5rem); padding-top: 20px; margin-bottom: -0.4rem; letter-spacing: 3; color: var(--main_color-2); font-weight: 800;">Sosmed</h1> -->
+        <section class="nav-section" style="z-index: 99; position: fixed; background-color: black;">
+            <div class="container-fluid nav" style="background-color: black;">
+                <div class="container" style="background-color: black; transform: translateX(-1rem);">
+                    <nav class="justify-content-center">
+                        <div class="logoHomepage">
+                            <img src="images/logo-medsos.png" alt="logo homepage">
+                        </div>
+                        <div class="row">
+                            <h1>All Bookmarks</h1>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <section class="home-section" style="background-color: black;">
+            <div class="container-fluid nav" style="background-color: black;">
+                <div class="container-fluid container-xl">
+                    <!-- Foreach card dimulai dari sini -->
+                    <div class="row" style="margin-bottom: 2rem;"> <a href="postingan.php"
+                            style="text-decoration: none; color: black;">
+                            <div class="konten-home">
+                                <div class="container">
+                                    <div class="row">
                                         <div class="col-lg-3 col-xl-3 col-md-4 col-6" style="margin-bottom: 3rem;">
-                                            <a href="{{ route('seePeople', ['user' => $post->user->id]) }}">
+                                            <a href="postingan.php">
                                                 <div class="card mx-auto">
                                                     <div class="card-body cardContent">
                                                         <div class="profileAuthor">
+                                                            <a href="profile.php"
+                                                                style="display: flex; text-decoration: none;">
                                                                 <img class="imagesProfileAuthorPost"
                                                                     src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
                                                                     alt="gambar profile">
@@ -724,7 +725,8 @@
                                                                     <div class="row">
                                                                         <div class="col-12">
                                                                             <p id="UsernamePosting">
-                                                                                {{ $post->user->username }}</p>
+                                                                                Naufal
+                                                                                Fadhilah F</p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
@@ -735,58 +737,58 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                            </a>
                                                         </div>
                                                     </div>
-                                                    <a href="{{ route('seePost', ['post' => $post->id]) }}">
+                                                    <a href="postingan.php">
                                                         <img style="border-radius: 8px;"
-                                                            src="{{ $post->image }}" class="card-img-top"
+                                                            src="images/default_profile.png" class="card-img-top"
                                                             alt="Gambar Postingan">
                                                     </a>
                                                 </div>
                                         </div>
-                                    @endforeach
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center footer">
+                        <p>Naufal</p>
+                        <p>Fadhilah</p>
+                        <p>Fitrah</p>
+                        <p>Naufal</p>
+                        <p>Fadhilah</p>
+                        <p>Fitrah</p>
+                        <p>Naufal</p>
+                        <p>Fadhilah</p>
+                        <p>Fitrah</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center footer">
+                        <p id="copyright">Copyright 2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-12 d-flex justify-content-center footer">
-                    <p>Naufal</p>
-                    <p>Fadhilah</p>
-                    <p>Fitrah</p>
-                    <p>Naufal</p>
-                    <p>Fadhilah</p>
-                    <p>Fitrah</p>
-                    <p>Naufal</p>
-                    <p>Fadhilah</p>
-                    <p>Fitrah</p>
+                <div class="col-lg-8 column-text-footer">
+                    <p id="text-1">Jangan ketinggalan berita terbaru</p>
+                    <p id="text-2">login, untuk pengalaman yang baru</p>
+                </div>
+                <div class="col-lg-4 col-12 d-flex column-btn">
+                    <a href="login.php" class="btn btn-login-footer">Login</a>
+                    <a href="register.php" class="btn btn-regist-footer">Register</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center footer">
-                    <p id="copyright">Copyright 2023</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 column-text-footer">
-                <p id="text-1">Jangan ketinggalan berita terbaru</p>
-                <p id="text-2">login, untuk pengalaman yang baru</p>
-            </div>
-            <div class="col-lg-4 col-12 d-flex column-btn">
-                <a href="login.php" class="btn btn-login-footer">Login</a>
-                <a href="register.php" class="btn btn-regist-footer">Register</a>
-            </div>
-        </div>
-</footer>
-</div>
+    </footer>
+    </div>
 
 </html>
 <script>
@@ -812,12 +814,12 @@
     // let kategori = $(this).html();
     // $('#namaKategori').html(kategori);
 
-    $('.pilihKategoriPostingan').on('click', function() {
+    $('.pilihKategoriPostingan').on('click', function () {
         $('.pilihKategoriPostingan').removeClass('active');
         $(this).addClass('active');
     });
 
-    $('.sidebarActive').on('click', function() {
+    $('.sidebarActive').on('click', function () {
         $('.sidebarActive').removeClass('sidebarActive').$(this).addClass('sidebarActive');
     })
 </script>

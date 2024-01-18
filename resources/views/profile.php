@@ -618,221 +618,223 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-    <link rel="icon" href="images/logo-medsos.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Edu+NSW+ACT+Foundation:wght@700&family=Kanit:wght@500&family=Mochiy+Pop+One&family=Montserrat:wght@200;600;800&family=Poppins:ital,wght@0,700;1,900&family=Ubuntu:wght@300&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
-    </script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile</title>
+        <link rel="icon" href="images/logo-medsos.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Edu+NSW+ACT+Foundation:wght@700&family=Kanit:wght@500&family=Mochiy+Pop+One&family=Montserrat:wght@200;600;800&family=Poppins:ital,wght@0,700;1,900&family=Ubuntu:wght@300&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        </script>
+    </head>
 
-<body style="background-color: black;">
-    <div class="sidebar">
-        <div class="detail_logo">
-            <a href="profile.php" style="display: flex;">
-                <i><img src="images/smk1.jpg" alt="gambar postingan"></i>
-                <div class="container-fluid rowUsername">
-                    <div class="row">
-                        <span id="usernameProfileAuthor">{{ $user->username }}</span>
-                    </div>
-                    <div class="row">
-                        <span id="namaProfileAuthor">{{ $user->name }}</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <hr
-            style="color: var(--main_color); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
-        <ul class="link-navigasi">
-            <li class="sidebarActive">
-                <a href="index.php">
-                    <i class="fa-solid fa-house aktif"></i>
-                    <p class="links_name" id="beranda">Beranda</p>
-                </a>
-            </li>
-            <li>
-                <a href="search.php">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <p class="links_name" id="explore">Explore</p>
-                </a>
-            </li>
-            <li>
-                <a href="postingan.css">
-                    <i class="fa-solid fa-bell"></i>
-                    <p class="links_name" id="notifikasi">Notifikasi</p>
-                </a>
-            </li>
-            <li>
-                <a href="home.php">
-                    <i class="fa-solid fa-plus"></i>
-                    <p class="links_name" id="posting">Posting</p>
-                </a>
-            </li>
-            <li>
-                <a href="bookmarks.php">
-                    <i class="fa-solid fa-bookmark"></i>
-                    <p class="links_name" id="bookmarks">Bookmarks</p>
-                </a>
-            </li>
-            <li>
-                <a href="dashboard_user.php">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <p class="links_name">Explore</p>
-                </a>
-            </li>
-            <li>
-                <a href="dashboard_postingan.css">
-                    <i class="fa-solid fa-bell"></i>
-                    <p class="links_name">Notifikasi</p>
-                </a>
-            </li>
-            <li class="log_out">
-                <a href="../session/logout.php">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <p class="links_name">Log out</p>
-                </a>
-            </li>
-            <li class="SidebarBottomText">
-                <p style="font-size: 0.48rem; width: 100%; color: grey; margin-top: 1rem;">
-                    Terms of Service
-                    Privacy Policy
-                    Cookie Policy
-                    Accessibility
-                    Ads info
-                    More
-                    © 2024 PT. Lorem Ipsum.
-                </p>
-            </li>
-        </ul>
-    </div>
-    <section class="home-section">
-        <div class="container-fluid nav" style="background-color: black;">
-            <div class="row">
-                <div class="col-12">
-                    <div class="container container-lg">
+    <body style="background-color: black;">
+        <div class="sidebar">
+            <div class="detail_logo">
+                <a href="profile.php" style="display: flex;">
+                    <i><img src="images/smk1.jpg" alt="gambar postingan"></i>
+                    <div class="container-fluid rowUsername">
                         <div class="row">
-                            <div class="col-xl-3">
-                                <div class="col-12 fotoProfile text-center">
-                                    <img src="images/smk1.jpg" alt="LogoProfile">
+                            <span id="usernameProfileAuthor">Naufal Fadhilah F</span>
+                        </div>
+                        <div class="row">
+                            <span id="namaProfileAuthor">Naufal Fadhilah F</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <hr
+                style="color: var(--main_color); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
+            <ul class="link-navigasi">
+                <li class="sidebarActive">
+                    <a href="index.php">
+                        <i class="fa-solid fa-house aktif"></i>
+                        <p class="links_name" id="beranda">Beranda</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="search.php">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p class="links_name" id="explore">Explore</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="postingan.css">
+                        <i class="fa-solid fa-bell"></i>
+                        <p class="links_name" id="notifikasi">Notifikasi</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="home.php">
+                        <i class="fa-solid fa-plus"></i>
+                        <p class="links_name" id="posting">Posting</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="bookmarks.php">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <p class="links_name" id="bookmarks">Bookmarks</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard_user.php">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <p class="links_name">Explore</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard_postingan.css">
+                        <i class="fa-solid fa-bell"></i>
+                        <p class="links_name">Notifikasi</p>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="../session/logout.php">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <p class="links_name">Log out</p>
+                    </a>
+                </li>
+                <li class="SidebarBottomText">
+                    <p style="font-size: 0.48rem; width: 100%; color: grey; margin-top: 1rem;">
+                        Terms of Service
+                        Privacy Policy
+                        Cookie Policy
+                        Accessibility
+                        Ads info
+                        More
+                        © 2024 PT. Lorem Ipsum.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <div class="container-fluid nav" style="background-color: black;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="container container-lg">
+                            <div class="row">
+                                <div class="col-xl-3">
+                                    <div class="col-12 fotoProfile text-center">
+                                        <img src="images/smk1.jpg" alt="LogoProfile">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-9">
-                                <div class="row d-flex">
-                                    <div class="col-12 d-flex">
-                                        <div class="col-8">
-                                            <p id="usernameProfile">{{ $user->username }}</p>
+                                <div class="col-xl-9">
+                                    <div class="row d-flex">
+                                        <div class="col-12 d-flex">
+                                            <div class="col-8">
+                                                <p id="usernameProfile">jangandifollow_74</p>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="edit_akun.php">
+                                                    <i class="fa-solid fa-gear btn-edit-akun"></i>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="col-4">
-                                            <a href="{{ route('editProfile') }}">
-                                                <i class="fa-solid fa-gear btn-edit-akun"></i>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 d-flex" class="dataInformation">
+                                            <a href="" id="wrapAnker">
+                                                <p id="countProfile">20</p>
+                                                <p id="InformationProfile">Posts</p>
+                                            </a>
+                                            <a href="" id="wrapAnker">
+                                                <p id="countProfile">20</p>
+                                                <p id="InformationProfile">Followers</p>
+                                            </a>
+                                            <a href="followDetail.php" id="wrapAnker">
+                                                <p id="countProfile">20</p>
+                                                <p id="InformationProfile">Following</p>
                                             </a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 d-flex" class="dataInformation">
-                                        <p id="countProfile">20</p>
-                                        <p id="InformationProfile">Posts</p>
-                                        <a href="{{ route('seeFollower', ['user'=>$user->id]) }}" id="wrapAnker">
-                                            <p id="countProfile">{{ $follower_count }}</p>
-                                            <p id="InformationProfile">Followers</p>
-                                        </a>
-                                        <a href="{{ route('seeFollowing', ['user'=>$user->id]) }}" id="wrapAnker">
-                                            <p id="countProfile">{{ $following_count }}</p>
-                                            <p id="InformationProfile">Following</p>
-                                        </a>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p id="namaLengkapProfile">Naufal Fadhilah Fitrah</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p id="bioProfile">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                                elit. Expedita placeat distinctio perspiciatis aspernatur nulla
+                                                praesentium et quas natus tempora adipisci.</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <p id="namaLengkapProfile">{{ $user->name }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p id="bioProfile">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                            elit. Expedita placeat distinctio perspiciatis aspernatur nulla
-                                            praesentium et quas natus tempora adipisci.</p>
+                                        <hr style="margin-right: 15px;">
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <hr style="margin-right: 15px;">
+                            <div class="row" id="feeds">
+                                <div class="col-4">
+                                    <a href="">
+                                        <img style="aspect-ratio: 1/1; width: 100%;" src="images/usbn.jpg"
+                                            alt="Image Postingan Feeds">
+                                    </a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row" id="feeds">
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/usbn.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/smk1.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;"
-                                        src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/sambut_pagi.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/usbn.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
+                                <div class="col-4">
+                                    <a href="">
+                                        <img style="aspect-ratio: 1/1; width: 100%;" src="images/smk1.jpg"
+                                            alt="Image Postingan Feeds">
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="">
+                                        <img style="aspect-ratio: 1/1; width: 100%;"
+                                            src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
+                                            alt="Image Postingan Feeds">
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="">
+                                        <img style="aspect-ratio: 1/1; width: 100%;" src="images/sambut_pagi.jpg"
+                                            alt="Image Postingan Feeds">
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="">
+                                        <img style="aspect-ratio: 1/1; width: 100%;" src="images/usbn.jpg"
+                                            alt="Image Postingan Feeds">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center footer">
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
-                        <p>Naufal</p>
-                        <p>Fadhilah</p>
-                        <p>Fitrah</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center footer">
+                            <p>Naufal</p>
+                            <p>Fadhilah</p>
+                            <p>Fitrah</p>
+                            <p>Naufal</p>
+                            <p>Fadhilah</p>
+                            <p>Fitrah</p>
+                            <p>Naufal</p>
+                            <p>Fadhilah</p>
+                            <p>Fitrah</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center footer">
+                            <p id="copyright">Copyright 2023</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center footer">
-                        <p id="copyright">Copyright 2023</p>
-                    </div>
-                </div>
-            </div>
-    </section>
-</body>
-<!-- <footer>
+        </section>
+    </body>
+    <!-- <footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 column-text-footer">
@@ -845,11 +847,11 @@
             </div>
         </div>
 </footer> -->
-</div>
+    </div>
 
 </html>
 <script>
-    $('.pilihKategoriPostingan').on('click', function() {
+    $('.pilihKategoriPostingan').on('click', function () {
         $('.pilihKategoriPostingan').removeClass('active');
         $(this).addClass('active');
     });

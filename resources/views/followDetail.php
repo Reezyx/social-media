@@ -9,6 +9,19 @@
         --text-color: #D9D9D9;
     }
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: black;
+    }
     * {
         /* border: 1px solid black; */
         margin: 0;
@@ -607,9 +620,7 @@
         font-weight: 600;
         padding: 10px 20px 10px 20px;
         border-radius: 15px;
-    }
-
-    .sidebar {
+    }    .sidebar {
         position: fixed;
         z-index: 100;
         overflow: auto;
@@ -925,13 +936,11 @@
         margin: 20px 10px 10px 5px;
         background: transparent;
     }
-
     .listFollowersSearch .form-control {
         color: var(--text-color);
-        border: 1.8px solid rgba(220, 220, 220, 0.3);
+        border: 1.8px solid rgba(220,220,220, 0.3);
         background: transparent;
     }
-
     .listFollowersSearch .form-control:focus {
         background: transparent;
         color: var(--text-color);
@@ -1313,593 +1322,13 @@
         padding: 10px 20px 10px 20px;
         border-radius: 15px;
     }
-
-
-    .sidebar {
-        position: fixed;
-        z-index: 100;
-        overflow: auto;
-        overflow-x: hidden;
-        height: 100%;
-        width: 16rem;
-        /* background: var(--main_color); */
-        box-shadow: 1px 1px 1px rgba(63, 151, 155, 0.4);
-        transition: all 0.5s ease;
-    }
-
-    .sidebar .detail_logo {
-        height: 80px;
-        display: flex;
-        align-items: center;
-    }
-
-    .sidebar .detail_logo a {
-        text-decoration: none;
-    }
-
-    .sidebar .detail_logo i {
-        font-size: 28px;
-        font-weight: 500;
-        color: #fff;
-        min-width: 60px;
-        text-align: center
-    }
-
-    .sidebar .detail_logo .namaProfileAuthor {
-        color: #fff;
-        font-size: 24px;
-        font-weight: 500;
-    }
-
-    .detail_logo .rowUsername {
-        margin: 0px 0px 0px -15px;
-    }
-
-    .konten-home .card {
-        border-radius: 15px;
-        border: 1px solid rgba(63, 151, 155, 0.6);
-        box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.09);
-        padding: 1rem 2rem 2rem 2rem;
-        margin-bottom: -1.3rem;
-        transition: all 0.5s ease;
-    }
-
-    .card .card-text {
-        margin-top: -0.7rem;
-    }
-
-    .rowUsername span {
-        margin-top: -2px;
-    }
-
-    .sidebar .link-navigasi {
-        margin-top: -8px;
-    }
-
-    .sidebar .link-navigasi li {
-        position: relative;
-        list-style: none;
-        height: 45px;
-    }
-
-    .sidebar .link-navigasi li a {
-        height: 100%;
-        width: 10%;
-        margin-left: -32px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        transition: all 0.4s ease;
-    }
-
-    .sidebar .link-navigasi li a p {
-        height: 100%;
-        width: 10%;
-        margin-top: 45px;
-        transition: all 0.4s ease;
-    }
-
-    .sidebar .link-navigasi li i {
-        min-width: 60px;
-        text-align: center;
-        font-size: 14px;
-        color: var(--main_color-3);
-    }
-
-    .sidebar .link-navigasi li a .links_name {
-        color: var(--main_color);
-        font-size: 13px;
-        font-weight: 400;
-        white-space: nowrap;
-    }
-
-    .sidebar .link-navigasi .log_out {
-        width: 100%;
-    }
-
-    .sidebar .link-navigasi .log_out p {
-        margin-top: 40px;
-    }
-
-    .sidebar .link-navigasi .SidebarBottomText {
-        margin-left: -1rem;
-        margin-right: 1rem;
-        position: absolute;
-        bottom: 10;
-        font-size: 0.7rem;
-    }
-
-    .sidebar .link-navigasi .SidebarBottomText p {
-        font-size: 0.2rem;
-    }
-
-    .logoHomepage {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .logoHomepage img {
-        padding-top: 1rem;
-        width: 2rem;
-    }
-
-    .navFilter {
-        margin-left: -15rem;
-    }
-
-    .home-section {
-        position: relative;
-        width: calc(100% - 240px);
-        left: 240px;
-        padding: 2.5rem 5rem 0rem 5rem;
-        transition: all 0.5s ease;
-    }
-
-    .nav-section {
-        position: relative;
-        width: calc(100% - 240px);
-        left: 280px;
-        transition: all 0.5s ease;
-    }
-
-    .logoHomepage {
-        margin-left: -15rem;
-    }
-
-    .sidebar.active~.home-section {
-        width: calc(100% - 60px);
-        left: 60px;
-    }
-
-    .home-section nav {
-        display: flex;
-        justify-content: space-between;
-        height: 80px;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        position: fixed;
-        width: calc(100% - 240px);
-        left: 240px;
-        padding: 0 20px;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-        transition: all 0.5s ease;
-    }
-
-    .sidebar.active~.home-section nav {
-        left: 60px;
-        width: calc(100% - 60px);
-    }
-
-    .home-section .konten-home {
-        position: relative;
-        margin: 0rem 2rem 0rem 2rem;
-    }
-
-    .home-section .fotoProfile img {
-        transition: all ease 0.3s;
-        justify-content: center;
-        aspect-ratio: 1/1;
-        width: 5rem;
-        height: 5rem;
-        border-radius: 50%;
-    }
-
-    .home-section .fotoProfile label {
-        cursor: pointer;
-        background-color: white;
-        padding: 7px;
-        border: 1px solid grey;
-        border-radius: 50%;
-        margin: 3.2rem 0rem 0rem -1.5rem;
-        position: absolute;
-    }
-
-    .home-section .fotoProfile label i {
-        font-size: 12px;
-        cursor: pointer;
-        color: var(--main_color-4);
-    }
-
-    .home-section .fotoProfile #btnUbahProfile {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    .headerEditProfile p {
-        color: var(--main_color);
-        margin: 1rem 0rem 1rem 0rem;
-        font-weight: 500;
-        text-align: center;
-    }
-
-    .home-section #usernameProfile {
-        font-size: 1.1rem;
-        font-weight: 700;
-    }
-
-    .formEdtProfile #edtUsername {
-        color: var(--text-color);
-        font-weight: 600;
-    }
-
-    .formEdtProfile #inpUsername {
-        background-color: black;
-        color: var(--main_color);
-        width: 100%;
-        padding: 5px 5px 5px 10px;
-        border-radius: 5px;
-        border: 1.8px solid rgba(220, 220, 220, 0.3);
-        font-size: 0.9rem;
-    }
-
-    .formEdtProfile #edtNama {
-        color: var(--text-color);
-        font-weight: 600;
-    }
-
-    .formEdtProfile #inpNama {
-        background-color: black;
-        color: var(--main_color);
-        width: 100%;
-        padding: 5px 5px 5px 10px;
-        border-radius: 5px;
-        border: 1.8px solid rgba(220, 220, 220, 0.3);
-        font-size: 0.9rem;
-    }
-
-    .formEdtProfile #edtEmail {
-        color: var(--text-color);
-        font-weight: 600;
-    }
-
-    .formEdtProfile #inpEmail {
-        background-color: black;
-        color: var(--main_color);
-        width: 100%;
-        padding: 5px 5px 5px 10px;
-        border-radius: 5px;
-        border: 1.8px solid rgba(220, 220, 220, 0.3);
-        font-size: 0.9rem;
-    }
-
-    .formEdtProfile #edtBio {
-        color: var(--text-color);
-        font-weight: 600;
-    }
-
-    .formEdtProfile #inpBio {
-        height: 7rem;
-        background-color: black;
-        color: var(--main_color);
-        width: 100%;
-        padding: 5px 5px 5px 10px;
-        border-radius: 5px;
-        border: 1.8px solid rgba(220, 220, 220, 0.3);
-        font-size: 0.9rem;
-    }
-
-    .edtData #buttonEdit {
-        padding: 5px 40px 5px 40px;
-        color: white;
-        border: none;
-        font-weight: 500;
-        border-radius: 5px;
-        font-size: 0.8rem;
-        box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.2);
-        float: right;
-        background-color: var(--main_color-4);
-    }
-
-    #wrapAnker {
-        display: flex;
-        text-decoration: none;
-        color: black;
-    }
-
-    #feeds {
-        margin: 0rem -0.2rem 0rem 1rem;
-    }
-
-    #feeds .col-4 {
-        margin: 0px -10px 4px -10px;
-    }
-
-    .home-section #countProfile {
-        font-weight: 600;
-        font-size: 0.9rem;
-        margin-right: 5px;
-    }
-
-    .home-section #informationProfile {
-        font-size: 0.9rem;
-        margin-right: 20px;
-    }
-
-    .home-section #namaLengkapProfile {
-        margin-top: -5px;
-        font-size: 0.8rem;
-        font-weight: 600;
-    }
-
-    #bioProfile {
-        margin-top: -0.8rem;
-    }
-
-    .home-section #bioProfile {
-        margin-right: 20px;
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
-
-    .konten-home h3 {
-        font-weight: 800;
-        margin-bottom: 20px;
-    }
-
-    .navigasi {
-        margin-right: 10rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .navigasi .navigasi-item a {
-        font-size: 0.7rem;
-        text-align: center;
-        margin-right: 100px;
-        text-decoration: none;
-        color: black;
-    }
-
-    .navigasi-item .active p {
-        font-weight: 600;
-        letter-spacing: 1;
-        padding-bottom: 5px;
-        border-bottom: 2px solid var(--main_color-3);
-        transition: all ease 0.3s;
-    }
-
-    .navigasi {
-        font-family: 'DM Sans', sans-serif;
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-    }
-
-    .navigasi a {
-        color: black;
-    }
-
-    .profileAuthor {
-        margin-left: -17px;
-        display: flex;
-    }
-
-    .profileAuthor img {
-        width: 70px;
-        aspect-ratio: 1/1;
-        margin-left: -10px;
-        background-color: white;
-        padding: 10px;
-        border-radius: 50%;
-        margin-top: -1rem;
-    }
-
-    .profileAuthor #usernamePosting {
-        font-weight: 700;
-        color: var(--main_color-3);
-    }
-
-    .profileAuthor #timePosting {
-        color: black;
-        margin-top: -18px;
-        font-size: 0.7rem;
-    }
-
-    .profileAuthor span {
-        margin: 10px 0px 0px 5px;
-    }
-
-    .saveToBookmark {
-        float: right;
-        margin-right: -1rem;
-        font-size: 1.6rem;
-        color: var(--main_color-3);
-        margin-top: -3rem;
-        background-color: unset;
-        border: unset;
-    }
-
-    .fiturPostingan p {
-        font-size: 0.9rem;
-    }
-
-    .fiturPostingan i {
-        font-size: 1.2rem;
-    }
-
-    @media (max-width: 991px) {
-
-        .home-section #SuggestFollowing {
-            display: none;
-        }
-
-        .sidebar {
-            width: 60px;
-        }
-
-        .rowUsername {
-            display: none;
-        }
-
-        .link-navigasi p {
-            display: none;
-        }
-
-        .sidebar.active {
-            width: 220px;
-        }
-
-        .home-section,
-        .nav-section {
-            width: calc(100% - 60px);
-            left: 60px;
-        }
-
-        .nav-section {
-            width: calc(100% - 60px);
-            left: 60px;
-        }
-
-        .logoHomepage {
-            margin-left: 0rem;
-        }
-
-        .navFilter {
-            margin-left: 0rem;
-        }
-
-        .sidebar.active~.home-section {
-            overflow: hidden;
-            left: 220px;
-        }
-
-        .home-section nav {
-            width: calc(100% - 60px);
-            left: 60px;
-        }
-
-        .sidebar.active~.home-section nav {
-            width: calc(100% - 220px);
-            left: 220px;
-        }
-    }
-
-    @media(max-width: 768px) {
-        .card {
-            transform: translateX(-10%);
-            width: 130%;
-        }
-    }
-
-    @media (max-width: 560px) {
-        .profileAuthor .namaProfileAuthorPost p {
-            font-size: 0.7rem;
-        }
-    }
-
-    @media(max-width: 462px) {
-        .konten-home .card {
-            padding: 0.6rem 1.2rem 1.2rem 1.2rem;
-            transition: all 0.5s ease;
-        }
-
-        .card .card-text {
-            margin-top: -1rem;
-            font-size: 0.7rem;
-        }
-
-        .profileAuthor .container p {
-            margin-top: -5px;
-        }
-
-        .profileAuthor img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .profileAuthor #usernamePosting {
-            font-size: 0.7rem;
-        }
-
-        .profileAuthor #timePosting {
-            font-size: 0.6rem;
-        }
-
-        .fiturPostingan p {
-            display: none;
-        }
-
-        .fiturPostingan i {
-            margin-right: -2rem;
-            font-size: 1rem;
-        }
-
-        .saveToBookmark {
-            font-size: 1.3rem;
-            transform: translateY(0.5rem);
-        }
-    }
-
-    .sidebar .detail_logo .namaProfileAuthor,
-    .suggestedFollowing,
-    #timePosting,
-    #usernamePosting {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    @media (max-width: 400px) {
-        .card {
-            transform: translateX(-15%);
-            width: 150%;
-            transition: all 0.5s ease;
-        }
-
-        .navigasi-item {
-            width: 60%;
-            font-size: 0.7rem;
-        }
-
-        .home-section nav {
-            width: 100%;
-            left: 70px;
-        }
-    }
-
-    .card-text {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
 </style>
 </style>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
     <head>
         <meta charset="UTF-8">
-        <title>Edit Profile</title>
+        <title>Beranda</title>
         <link rel="icon" href="images/logo-medsos.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link
@@ -1916,18 +1345,17 @@
             }
         </script>
     </head>
-
     <body style="background-color: black;">
         <div class="sidebar">
             <div class="detail_logo">
-                <a href="{{ route('myProfile') }}" style="display: flex;">
+                <a href="profile.php" style="display: flex;">
                     <i><img src="images/smk1.jpg" alt="gambar postingan"></i>
                     <div class="container-fluid rowUsername">
                         <div class="row">
-                            <span id="usernameProfileAuthor">{{ $user->username }}</span>
+                            <span id="usernameProfileAuthor">Naufal Fadhilah F</span>
                         </div>
                         <div class="row">
-                            <span id="namaProfileAuthor">{{ $user->name }}</span>
+                            <span id="namaProfileAuthor">Naufal Fadhilah F</span>
                         </div>
                     </div>
                 </a>
@@ -1936,7 +1364,7 @@
                 style="color: var(--main_color); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
             <ul class="link-navigasi">
                 <li class="sidebarActive">
-                    <a href="{{ route('index') }}">
+                    <a href="index.php">
                         <i class="fa-solid fa-house aktif"></i>
                         <p class="links_name" id="beranda">Beranda</p>
                     </a>
@@ -1996,83 +1424,96 @@
                 </li>
             </ul>
         </div>
-        <section class="home-section">
-            <div class="container-fluid nav">
-                <div class="container-fluid container-xl">
-                    <div class="row">
-                        <div class="col-12">
-                            <form action="" method="POST">
-                                <div class="container container-lg">
-                                    <div class="row formEdtProfile">
-                                        <div class="col-xl-12">
-                                            <div class="container">
-                                                <div class="col-12">
-                                                    <div class="col-12 fotoProfile text-center">
-                                                        <img id="isiGambar" src="images/smk1.jpg" alt="LogoProfile">
-                                                        <label for="btnUbahProfile">
-                                                            <i class="fa-solid fa-camera"></i>
-                                                            <input type="file" name="edtFotoProfile"
-                                                                id="btnUbahProfile">
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12 headerEditProfile">
-                                                        <p>Edit Profile</p>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <p id="edtUsername">Username</p>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <p><input type="text" name="inpUsername" id="inpUsername"
-                                                                value="{{ $user->username }}"></p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <p id="edtNama">Nama</p>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <p><input type="text" name="inpNama" id="inpNama"
-                                                                value="{{ $user->name }}"></p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <p id="edtEmail">E - Mail</p>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <p><input type="text" name="inpEmail" id="inpEmail"
-                                                                value="{{ $user->email }}"></p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <p id="edtBio">Bio</p>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <p><textarea type="text" name="inpBio"
-                                                                id="inpBio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, autem. Cupiditate quia molestiae porro, ducimus fugiat odio? Est expedita eaque enim commodi quia nulla esse. Necessitatibus cum impedit, tenetur beatae dicta eaque iure officia dignissimos, eveniet libero obcaecati aliquid voluptatum. Ad illo reprehenderit unde quidem harum quisquam at facilis eveniet.</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md edtData">
-                                                        <button type="submit" id="buttonEdit">Edit</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+         <section class="home-section">
+        <div class="container-fluid nav">
+            <div class="container-fluid container-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-lg-2 d-flex" onClick="backToHistory()">
+                                <p id="arrowLeft">
+                                    < </p>
+                                        <p id="back">Back</p>
+                            </div>
+                            <div class="col-lg-8 col-12">
+                                <p class="usernameDetailFollow" style="text-align: center; justify-content: center;">jangandifollow_74</p>
+                            </div>
                         </div>
+                        <div class="row navigasiFilter">
+                            <ul class="navigasi" style="margin-top: 10px; margin-bottom: -20px;">
+                                <li class="navigasi-item NavFilter">
+                                    <a class="navigasi-link pilihKategoriFollow active" href="#">
+                                        <p>Followers</p>
+                                    </a>
+                                </li>
+                                <li class="navigasi-item">
+                                    <a class="navigasi-link pilihKategoriFollow" href="#">
+                                        <p>Following</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <p id="allFollowers"></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 listFollowersSearch">
+                        <form action="" method="POST">
+                            <div class="row">
+                                <div class="col-12 headerSearchFollowing">
+                                    <p>Cari followers</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex searchFollowing">
+                                    <input type="text" class="form-control" name="isiCari" id="isiCari" placeholder="Cari">
+                                    <button type="submit" name="kirimCari" id="btnKirimCari">
+                                        <i class="fa-solid fa-magnifying-glass"></i> </button>
+                                </div>
+                            </div>
+                        </form>
+                        <a href="profile.php" style="display: flex;">
+                            <i><img src="images/sambut_pagi.jpg" alt="gambar postingan"></i>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <span class="usernameFollowers">Naufal Fadhilah F</span>
+                                </div>
+                                <div class="row">
+                                    <span class="namaFollowers">Naufal Fadhilah F</span>
+                                </div>
+                            </div>
+                            <form action="" method="POST">
+                                <p>
+                                    <input type="submit" class="btn" name="follow" id="follow" value="Follow">
+                                </p>
+                            </form>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 listFollowers">
+                        <div class="col-12">
+                            <p id="listAll">List All Followers</p>
+                        </div>
+                        <a href="profile.php" style="display: flex;">
+                            <i><img src="images/sambut_pagi.jpg" alt="gambar postingan"></i>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <span class="usernameFollowers">Naufal Fadhilah F</span>
+                                </div>
+                                <div class="row">
+                                    <span class="namaFollowers">Naufal Fadhilah F</span>
+                                </div>
+                            </div>
+                            <form action="" method="POST">
+                                <p>
+                                    <input type="submit" class="btn" name="follow" id="follow" value="Follow">
+                                </p>
+                            </form>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     </body>
     <!-- <footer>
     <div class="container">
@@ -2091,19 +1532,11 @@
 
 </html>
 <script>
-    function backToHistory() {
+    function backToHistory(){
         window.history.back();
     }
-    $('.pilihKategoriFollow').on('click', function () {
+    $('.pilihKategoriFollow').on('click', function(){
         $('.pilihKategoriFollow').removeClass('active');
         $(this).addClass('active');
-    });
-
-    const image = document.getElementById("isiGambar");
-    const input = document.getElementById("btnUbahProfile");
-
-    input.addEventListener("change", () => {
-        image.src = URL.createObjectURL(input.files[0]);
-    });
-
+    })
 </script>

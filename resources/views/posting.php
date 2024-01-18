@@ -169,7 +169,7 @@
         min-width: 60px;
         text-align: center;
         font-size: 14px;
-        color: white;
+        color: var(--main_color-3);
     }
 
     .sidebar .link-navigasi li a .links_name {

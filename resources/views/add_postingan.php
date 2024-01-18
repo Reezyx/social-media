@@ -2,10 +2,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
     :root {
-        --main_color: white;
+        --main_color: #EEEEEE;
         --main_color-2: black;
         --main_color-3: #3F979B;
-        --text-color: #D9D9D9;
     }
 
     * {
@@ -17,7 +16,6 @@
     }
 
     .sidebar {
-        background-color: var(--main_color-2);
         position: fixed;
         z-index: 100;
         overflow: auto;
@@ -35,13 +33,6 @@
         align-items: center;
     }
 
-    .sidebar .detail_logo img {
-        width: 37px;
-        aspect-ratio: 1/1;
-        padding: 2px;
-        border-radius: 20px;
-    }
-
     .sidebar .detail_logo a {
         text-decoration: none;
     }
@@ -54,18 +45,10 @@
         text-align: center
     }
 
-    .sidebar .detail_logo #usernameProfileAuthor {
-        margin-top: 2px;
-        font-size: 0.9rem;
-        color: white;
+    .sidebar .detail_logo .namaProfileAuthor {
+        color: #fff;
+        font-size: 24px;
         font-weight: 500;
-    }
-
-    .sidebar .detail_logo #namaProfileAuthor {
-        font-size: 0.6rem;
-        font-family: 'Poppins';
-        font-weight: 300;
-        color: var(--main_color);
     }
 
     .detail_logo .rowUsername {
@@ -94,7 +77,7 @@
     }
 
     .sidebar .link-navigasi li {
-        color: var(--main_color) position: relative;
+        position: relative;
         list-style: none;
         height: 45px;
     }
@@ -120,24 +103,14 @@
         min-width: 60px;
         text-align: center;
         font-size: 14px;
-        color: var(--main_color);
+        color: var(--main_color-3);
     }
 
     .sidebar .link-navigasi li a .links_name {
-        color: var(--main_color);
+        color: var(--main_color-2);
         font-size: 13px;
         font-weight: 400;
         white-space: nowrap;
-    }
-
-    .sidebar .link-navigasi .sidebarActive i {
-        color: #52D3D8;
-    }
-
-    .sidebar .link-navigasi .sidebarActive .links_name {
-        color: #52D3D8;
-        font-weight: 600;
-        letter-spacing: 1;
     }
 
     .sidebar .link-navigasi .log_out {
@@ -225,33 +198,116 @@
     }
 
     .home-section .fotoProfile img {
-        border-radius: 50%;
         transition: all ease 0.3s;
         justify-content: center;
         aspect-ratio: 1/1;
-        width: 8rem;
-        height: 8rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+
+    .home-section .fotoProfile label {
+        cursor: pointer;
+        background-color: white;
+        padding: 7px;
+        border: 1px solid grey;
+        border-radius: 50%;
+        margin: 3.2rem 0rem 0rem -1.5rem;
+        position: absolute;
+    }
+
+    .home-section .fotoProfile label i {
+        font-size: 12px;
+        cursor: pointer;
+        color: black;
+    }
+
+    .home-section .fotoProfile #btnUbahProfile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .headerEditProfile p {
+        margin: 1rem 0rem 1rem 0rem;
+        font-weight: 500;
+        text-align: center;
     }
 
     .home-section #usernameProfile {
-        color: var(--main_color);
         font-size: 1.1rem;
         font-weight: 700;
     }
 
-    .col-4 .btn-edit-akun {
-        margin-left: 6rem;
-        color: var(--text-color);
-        transition: all ease 0.5s;
+    .formEdtProfile #edtUsername {
+        font-weight: 600;
     }
 
-    .col-4 .btn-edit-akun:hover {
-        transform: rotate(50deg);
-        transition: all ease 0.5s;
+    .formEdtProfile #inpUsername {
+        width: 100%;
+        padding: 5px 5px 5px 10px;
+        border-radius: 5px;
+        box-shadow: 1px 0.3px 3px rgba(0, 0, 0, 0.2);
+        border: 1px solid grey;
+        font-size: 0.9rem;
+    }
+
+    .formEdtProfile #edtNama {
+        font-weight: 600;
+    }
+
+    .formEdtProfile #inpNama {
+        width: 100%;
+        padding: 5px 5px 5px 10px;
+        border-radius: 5px;
+        box-shadow: 1px 0.3px 3px rgba(0, 0, 0, 0.2);
+        border: 1px solid grey;
+        font-size: 0.9rem;
+    }
+
+    .formEdtProfile #edtEmail {
+        font-weight: 600;
+    }
+
+    .formEdtProfile #inpEmail {
+        width: 100%;
+        padding: 5px 5px 5px 10px;
+        border-radius: 5px;
+        box-shadow: 1px 0.3px 3px rgba(0, 0, 0, 0.2);
+        border: 1px solid grey;
+        font-size: 0.9rem;
+    }
+
+    .formEdtProfile #edtBio {
+        font-weight: 600;
+    }
+
+    .formEdtProfile #inpBio {
+        height: 7rem;
+        width: 100%;
+        padding: 5px 5px 5px 10px;
+        box-shadow: 1px 0.3px 3px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        font-size: 0.9rem;
+    }
+
+    .edtData #buttonEdit {
+        padding: 5px 40px 5px 40px;
+        color: white;
+        border: none;
+        font-weight: 500;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.2);
+        float: right;
+        background-color: var(--main_color-3);
     }
 
     #wrapAnker {
-        margin-top: -5px;
         display: flex;
         text-decoration: none;
         color: black;
@@ -266,33 +322,29 @@
     }
 
     .home-section #countProfile {
-        color: var(--text-color);
         font-weight: 600;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         margin-right: 5px;
     }
 
     .home-section #informationProfile {
-        color: var(--text-color);
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         margin-right: 20px;
     }
 
     .home-section #namaLengkapProfile {
-        color: var(--text-color);
         margin-top: -5px;
         font-size: 0.8rem;
         font-weight: 600;
     }
 
     #bioProfile {
-        color: var(--text-color);
         margin-top: -0.8rem;
     }
 
     .home-section #bioProfile {
-        margin-right: 50px;
-        font-size: 0.6rem;
+        margin-right: 20px;
+        font-size: 0.75rem;
         font-weight: 500;
     }
 
@@ -620,15 +672,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
-    <link rel="icon" href="images/logo-medsos.png">
+    <title>Beranda</title>
+    <link rel="icon" href="images/pt_amanah_karya_indonesia_logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Edu+NSW+ACT+Foundation:wght@700&family=Kanit:wght@500&family=Mochiy+Pop+One&family=Montserrat:wght@200;600;800&family=Poppins:ital,wght@0,700;1,900&family=Ubuntu:wght@300&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&family=Edu+NSW+ACT+Foundation:wght@700&family=Kanit:wght@500&family=Mochiy+Pop+One&family=Montserrat:wght@200;600;800&family=Poppins:ital,wght@0,700;1,900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
@@ -638,52 +687,45 @@
     </script>
 </head>
 
-<body style="background-color: black;">
+<body>
     <div class="sidebar">
         <div class="detail_logo">
             <a href="profile.php" style="display: flex;">
-                <i><img src="images/smk1.jpg" alt="gambar postingan"></i>
+                <i><img src="images/smk1.jpg" alt="gambar postingan" style="width: 2.5rem; height: 2.5rem; background-color: white; padding: 2px; border-radius: 20px; aspect-ratio: 1/1;"></i>
                 <div class="container-fluid rowUsername">
                     <div class="row">
-                        <span id="usernameProfileAuthor">{{ $user->username }}</span>
+                        <span class="namaProfileAuthor" style="font-size: 1.1rem; font-family: 'Poppins'; font-weight: 600; color: var(--main_color-2);">Naufal Fadhilah F</span>
                     </div>
                     <div class="row">
-                        <span id="namaProfileAuthor">{{ $user->name }}</span>
+                        <span class="namaProfileAuthor" style="font-size: 0.5rem; font-family: 'Poppins'; font-weight: 300;  color: var(--main_color-2);">Naufal Fadhilah F</span>
                     </div>
                 </div>
             </a>
         </div>
-        <hr
-            style="color: var(--main_color); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
+        <hr style="color: var(--main_color-3); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
         <ul class="link-navigasi">
-            <li class="sidebarActive">
-                <a href="index.php">
+            <li>
+                <a href="home.php">
                     <i class="fa-solid fa-house aktif"></i>
-                    <p class="links_name" id="beranda">Beranda</p>
+                    <p class="links_name" class="aktif">Beranda</p>
                 </a>
             </li>
             <li>
                 <a href="search.php">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <p class="links_name" id="explore">Explore</p>
+                    <p class="links_name">Explore</p>
                 </a>
             </li>
             <li>
-                <a href="postingan.css">
+                <a href="notifikasi.php">
                     <i class="fa-solid fa-bell"></i>
-                    <p class="links_name" id="notifikasi">Notifikasi</p>
+                    <p class="links_name">Notifikasi</p>
                 </a>
             </li>
             <li>
                 <a href="home.php">
-                    <i class="fa-solid fa-plus"></i>
-                    <p class="links_name" id="posting">Posting</p>
-                </a>
-            </li>
-            <li>
-                <a href="bookmarks.php">
-                    <i class="fa-solid fa-bookmark"></i>
-                    <p class="links_name" id="bookmarks">Bookmarks</p>
+                    <i class="fa-solid fa-house aktif"></i>
+                    <p class="links_name" class="aktif">Beranda</p>
                 </a>
             </li>
             <li>
@@ -693,9 +735,15 @@
                 </a>
             </li>
             <li>
-                <a href="dashboard_postingan.css">
+                <a href="dashboard_notifikasi.php">
                     <i class="fa-solid fa-bell"></i>
                     <p class="links_name">Notifikasi</p>
+                </a>
+            </li>
+            <li>
+                <a href="bookmarks.php">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <p class="links_name">Bookmarks</p>
                 </a>
             </li>
             <li class="log_out">
@@ -712,105 +760,82 @@
                     Accessibility
                     Ads info
                     More
-                    © 2024 PT. Lorem Ipsum.
+                    © 2024 Amanah Corp.
                 </p>
             </li>
         </ul>
     </div>
     <section class="home-section">
-        <div class="container-fluid nav" style="background-color: black;">
-            <div class="row">
-                <div class="col-12">
-                    <div class="container container-lg">
-                        <div class="row">
-                            <div class="col-xl-3">
-                                <div class="col-12 fotoProfile text-center">
-                                    <img src="images/smk1.jpg" alt="LogoProfile">
-                                </div>
-                            </div>
-                            <div class="col-xl-9">
-                                <div class="row d-flex">
-                                    <div class="col-12 d-flex">
-                                        <div class="col-8">
-                                            <p id="usernameProfile">{{ $user->username }}</p>
+        <div class="container-fluid nav" style="background-color: white;">
+            <div class="container-fluid container-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="" method="POST">
+                            <div class="container container-lg">
+                                <div class="row formEdtProfile">
+                                    <div class="col-xl-12">
+                                        <div class="container">
+                                            <div class="col-12">
+                                                <div class="col-12 fotoProfile text-center">
+                                                    <img src="images/smk1.jpg" alt="LogoProfile">
+                                                    <label for="btnUbahProfile">
+                                                        <i class="fa-solid fa-camera"></i>
+                                                        <input type="file" name="edtFotoProfile" id="btnUbahProfile">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 headerEditProfile">
+                                                    <p>Edit Profile</p>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <p id="edtUsername">Username</p>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p><input type="text" name="inpUsername" id="inpUsername" value="jangandifollow_74"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <p id="edtNama">Nama</p>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p><input type="text" name="inpNama" id="inpNama" value="Naufal Fadhilah F"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <p id="edtEmail">E - Mail</p>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p><input type="text" name="inpEmail" id="inpEmail" value="naufalfadhilahxpplg1@gmail.com"></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <p id="edtBio">Bio</p>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p><textarea type="text" name="inpBio" id="inpBio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, autem. Cupiditate quia molestiae porro, ducimus fugiat odio? Est expedita eaque enim commodi quia nulla esse. Necessitatibus cum impedit, tenetur beatae dicta eaque iure officia dignissimos, eveniet libero obcaecati aliquid voluptatum. Ad illo reprehenderit unde quidem harum quisquam at facilis eveniet.</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md edtData">
+                                                    <button type="submit" id="buttonEdit">Edit</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-4">
-                                            <a href="{{ route('editProfile') }}">
-                                                <i class="fa-solid fa-gear btn-edit-akun"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 d-flex" class="dataInformation">
-                                        <p id="countProfile">20</p>
-                                        <p id="InformationProfile">Posts</p>
-                                        <a href="{{ route('seeFollower', ['user'=>$user->id]) }}" id="wrapAnker">
-                                            <p id="countProfile">{{ $follower_count }}</p>
-                                            <p id="InformationProfile">Followers</p>
-                                        </a>
-                                        <a href="{{ route('seeFollowing', ['user'=>$user->id]) }}" id="wrapAnker">
-                                            <p id="countProfile">{{ $following_count }}</p>
-                                            <p id="InformationProfile">Following</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p id="namaLengkapProfile">{{ $user->name }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p id="bioProfile">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                            elit. Expedita placeat distinctio perspiciatis aspernatur nulla
-                                            praesentium et quas natus tempora adipisci.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <hr style="margin-right: 15px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="feeds">
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/usbn.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/smk1.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;"
-                                        src="images/ldks-hari--1_1640302800_ldks-11-hari-1-thumb.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/sambut_pagi.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                            <div class="col-4">
-                                <a href="">
-                                    <img style="aspect-ratio: 1/1; width: 100%;" src="images/usbn.jpg"
-                                        alt="Image Postingan Feeds">
-                                </a>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container" style="bottom: 0;">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center footer">
                         <p>Naufal</p>
@@ -846,11 +871,10 @@
         </div>
 </footer> -->
 </div>
-
 </html>
 <script>
     $('.pilihKategoriPostingan').on('click', function() {
         $('.pilihKategoriPostingan').removeClass('active');
         $(this).addClass('active');
     });
-</script>
+</script>s

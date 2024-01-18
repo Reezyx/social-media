@@ -5,11 +5,12 @@
         --main_color: #EEEEEE;
         --main_color-2: black;
         --main_color-3: #3F979B;
+        --main_color-4: #3F979B;
         --text-color: #D9D9D9;
     }
 
     * {
-        /* border: 1px solid white; */
+        /* border: 1px solid black; */
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -29,7 +30,6 @@
     ::-webkit-scrollbar-thumb {
         background: black;
     }
-
     .sidebar {
         background: black;
         position: fixed;
@@ -90,7 +90,7 @@
         max-width: 30rem;
         color: white;
         background-color: black;
-        border: 1.8px solid rgba(220, 220, 220, 0.3);
+        border: 1.8px solid rgba(220,220,220, 0.3);
         border-radius: 8px;
         padding: 0.7rem 1.3rem 1.2rem 1.2rem;
         margin-bottom: -1.3rem;
@@ -152,7 +152,7 @@
         min-width: 60px;
         text-align: center;
         font-size: 14px;
-        color: white;
+        color: var(--main_color-4);
     }
 
     .sidebar .link-navigasi li a .links_name {
@@ -186,38 +186,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .form-search {
-        margin: 1rem 0rem 0.6rem -11rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .form-search button {
-        margin: 0rem 0rem 0rem 1rem;
-        background: black;
-        color: white;
-        border: unset;
-    }
-
-    .form-search input[type='text'] {
-        background-color: black;
-        border: 1.8px solid rgba(220, 220, 220, 0.3);
-        border-radius: 8px;
-        padding: 0px 0px 0px 10px;
-        font-size: 0.8rem;
-        width: 20rem;
-        height: 2rem;
-        transition: all ease 0.3s;
-        color: var(--main_color);
-    }
-
-    .form-search input[type='text']:focus {
-        border: unset;
-        width: 22rem;
-        transition: all ease 0.3s;
     }
 
     .logoHomepage img {
@@ -390,6 +358,7 @@
             display: none;
         }
 
+
         .sidebar {
             width: 60px;
         }
@@ -419,10 +388,6 @@
 
         .logoHomepage {
             margin-left: 0rem;
-        }
-
-        .form-search {
-            margin-left: 3rem;
         }
 
         .navFilter {
@@ -650,26 +615,26 @@
             <hr
                 style="color: var(--main_color); opacity: 0.3; width: 100%; margin-top: -0px; height: 1.6px; justify-content: center;">
             <ul class="link-navigasi">
-                <li>
-                    <a href="index.php">
+                <li class="sidebarActive">
+                    <a href="home.php">
                         <i class="fa-solid fa-house aktif"></i>
                         <p class="links_name" id="beranda">Beranda</p>
                     </a>
                 </li>
-                <li class="sidebarActive">
+                <li>
                     <a href="search.php">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <p class="links_name" id="explore">Explore</p>
                     </a>
                 </li>
                 <li>
-                    <a href="postingan.css">
+                    <a href="notifikasi.php">
                         <i class="fa-solid fa-bell"></i>
                         <p class="links_name" id="notifikasi">Notifikasi</p>
                     </a>
                 </li>
                 <li>
-                    <a href="home.php">
+                    <a href="posting.php">
                         <i class="fa-solid fa-plus"></i>
                         <p class="links_name" id="posting">Posting</p>
                     </a>
@@ -719,12 +684,20 @@
                         <div class="logoHomepage">
                             <img src="images/logo-medsos.png" alt="logo homepage">
                         </div>
-                        <form action="" method="POST" class="form-search">
-                            <input type="text" name="search" id="search" placeholder="Cari user">
-                            <button type="submit">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </form>
+                        <div class="row">
+                            <ul class="navigasi" style="margin-top: 10px; margin-bottom: 0;">
+                                <li class="navigasi-item NavFilter">
+                                    <a class="navigasi-link pilihKategoriPostingan active" href="#">
+                                        <p>For You</p>
+                                    </a>
+                                </li>
+                                <li class="navigasi-item">
+                                    <a class="navigasi-link pilihKategoriPostingan" href="#">
+                                        <p>Following</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
             </div>

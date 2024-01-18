@@ -152,8 +152,7 @@
 
     <body>
         <div class="container-fluid main_content">
-            <form action="{{ route('registrasi') }}" method="POST">
-                @csrf
+            <form action="" method="POST">
                 <div class="container container_wrap">
                     <div class="row row_header">
                         <div class="col-12">
@@ -178,27 +177,27 @@
                                             <div class="row row_input1">
                                                 <div class="col-md-6">
                                                     <h6>Username</h6>
-                                                    <input type="text" name="username" id="usernameRegist"
+                                                    <input type="text" name="usernameRegist" id="usernameRegist"
                                                         placeholder="Masukkan username">
                                                 </div>
                                                 <div class="col-md-6 namaRegist">
                                                     <h6>
                                                         Nama</h6>
-                                                    <input type="text" name="name" id="namaRegist"
+                                                    <input type="text" name="namaRegist" id="namaRegist"
                                                         placeholder="Masukkan nama lengkap">
                                                 </div>
                                             </div>
                                             <div class="row row_input2">
                                                 <h6>
                                                     E - Mail</h6>
-                                                <input type="text" name="email" id="emailRegist"
+                                                <input type="text" name="emailRegist" id="emailRegist"
                                                     placeholder="Masukkan akun e-mail">
                                             </div>
                                             <div class="row row_input2">
                                                 <h6>
                                                     Password
                                                 </h6>
-                                                <input type="password" name="password" id="passwordRegist"
+                                                <input type="password" name="passwordRegist" id="passwordRegist"
                                                     placeholder="Masukkan password">
                                             </div>
                                         </div>
@@ -211,7 +210,7 @@
                                     <div class="row punya_akun">
                                         <div class="col-12 d-flex">
                                             <p>Sudah punya akun?</p>
-                                            <a href="{{ route('formLogin') }}" class="btnRegist">Login</a>
+                                            <a href="login.php" class="btnRegist">Login</a>
                                         </div>
                                     </div>
                                 </div>

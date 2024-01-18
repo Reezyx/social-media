@@ -140,8 +140,7 @@
 
     <body>
         <div class="container-fluid main_content">
-            <form action="{{ route('login') }}" method="POST">
-                @csrf
+            <form action="" method="POST">
                 <div class="container container_wrap">
                     <div class="row row_header">
                         <div class="col-12">
@@ -165,9 +164,9 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="row row_input1">
-                                                <h6>E - Mail</h6>
-                                                <input type="text" name="email" id="email"
-                                                    placeholder="Masukkan email">
+                                                <h6>Username</h6>
+                                                <input type="text" name="username" id="username"
+                                                    placeholder="Masukkan username">
                                             </div>
                                             <div class="row row_input2">
                                                 <h6>Password</h6>
@@ -184,7 +183,7 @@
                                     <div class="row punya_akun">
                                         <div class="col-12 d-flex">
                                             <p>Belum punya akun?</p>
-                                            <a href="{{ route('formRegistrasi') }}" class="btnRegist">Register</a>
+                                            <a href="register.php" class="btnRegist">Register</a>
                                         </div>
                                     </div>
                                 </div>
@@ -283,4 +282,5 @@
             </div>
         </div>
     </body>
+
 </html>
